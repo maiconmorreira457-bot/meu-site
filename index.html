@@ -1,20 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Minha Loja</title>
-</head>
-<body style="font-family: Arial; text-align: center;">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beauty Store Premium</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <h1>🔥 Minha Loja Oficial 🔥</h1>
-  <p>Os produtos mais desejados do momento</p>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #222;
+    }
 
-  <h2>Produto 1</h2>
-  <p>Descrição do produto top</p>
-  <button>Comprar</button>
+    header {
+      background: linear-gradient(135deg, #ff4fa3, #ff85c2);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-  <h2>Produto 2</h2>
-  <p>Outro produto que vende muito</p>
-  <button>Comprar</button>
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
 
-</body>
-</html>
+    header p {
+      font-size: 16px;
+      opacity: 0.95;
+    }
+
+    .topo {
+      text-align: center;
+      padding: 18px;
+      background: white;
+      border-bottom: 1px solid #f1d5e4;
+      font-weight: bold;
+      color: #ff4fa3;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 16px 50px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: #d63384;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .emoji {
+      font-size: 46px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #666;
+      min-height: 42px;
+      margin-bottom: 14px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #e60073;
+      margin-bottom: 14px;
+    }
+
+    .old-price {
+      font-size: 14px;
+      color: #999;
+      text-decoration: line-through;
+      margin-bottom: 6px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background: #1ebe5d;
+    }
+
+    .benefits {
+      margin-top: 40px;
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    }
+
+    .benefits h2 {
+      color: #d63384;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .benefits p {
+      text-align
