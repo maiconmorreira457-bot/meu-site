@@ -24,15 +24,25 @@ body {
 
 /* BANNER */
 .banner {
+  position: relative;
   height: 200px;
   overflow: hidden;
-  position: relative;
 }
 
 .banner img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  position: absolute;
+  transition: opacity 1s;
+}
+
+.banner img.active {
+  opacity: 1;
+}
+
+.banner img {
+  opacity: 0;
 }
 
 /* CARROSSEL */
@@ -56,8 +66,22 @@ body {
   border-radius: 10px;
 }
 
-.card h3 {
-  font-size: 14px;
+/* LISTA GRANDE */
+.lista {
+  padding: 15px;
+}
+
+.produto {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 10px;
 }
 
 .preco {
@@ -68,15 +92,15 @@ body {
 .botao {
   background: linear-gradient(90deg,#ff4da6,#ffd633);
   color: white;
-  padding: 8px;
+  padding: 10px;
   text-align: center;
   border-radius: 10px;
   text-decoration: none;
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
-/* BOTÃO FLUTUANTE */
+/* WHATS */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -85,77 +109,79 @@ body {
   padding: 15px;
   border-radius: 50%;
   color: white;
-  text-decoration: none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="topo">
-✨ Maison Beauty ✨
-</div>
+<div class="topo">✨ Maison Beauty ✨</div>
 
-<!-- BANNER GRANDE -->
+<!-- BANNER INTERATIVO -->
 <div class="banner">
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" class="active">
 <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+<img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
 </div>
 
-<!-- CARROSSEL PRODUTOS -->
+<!-- CARROSSEL -->
 <div class="carrossel">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb">
-<h3>Sérum Vitamina C</h3>
-<p class="preco">R$ 79,90</p>
-<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+<p>Sérum Vitamina C</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f">
-<h3>Escova Secadora</h3>
-<p class="preco">R$ 189,90</p>
-<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+<p>Escova Secadora</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908">
+<p>Kit Skincare</p>
+</div>
+
+</div>
+
+<!-- LISTA COMPLETA -->
+<div class="lista">
+
+<div class="produto">
+<img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb">
+<h3>Sérum Vitamina C</h3>
+<p class="preco">R$79,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f">
+<h3>Escova Secadora</h3>
+<p class="preco">R$189,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908">
 <h3>Kit Skincare</h3>
-<p class="preco">R$ 149,90</p>
-<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
-<h3>Base Premium</h3>
-<p class="preco">R$ 59,90</p>
-<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1611080541599-8c6dbde6ed28">
-<h3>Gloss Labial</h3>
-<p class="preco">R$ 29,90</p>
-<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
-<h3>Perfume Luxo</h3>
-<p class="preco">R$ 129,90</p>
-<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be">
-<h3>Máscara Capilar</h3>
-<p class="preco">R$ 69,90</p>
+<p class="preco">R$149,90</p>
 <a class="botao" href="https://wa.me/5561995041672">Comprar</a>
 </div>
 
 </div>
 
 <a class="whatsapp" href="https://wa.me/5561995041672">💬</a>
+
+<script>
+let slides = document.querySelectorAll(".banner img");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 3000);
+</script>
 
 </body>
 </html>
