@@ -1,229 +1,452 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imperium Beauty</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imperium Beauty</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
 
-<style>
-body {margin:0;font-family:Arial;background:#fff;color:#333;}
+    .topbar {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.4px;
+    }
 
-.topo {
-background: linear-gradient(90deg,#000,#444);
-color:#fff;
-text-align:center;
-padding:10px;
-font-weight:bold;
-}
+    header {
+      background: #fff;
+      padding: 28px 20px 18px;
+      border-bottom: 1px solid #e9e9e9;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
 
-header {
-padding:20px;
-text-align:center;
-}
+    .brand {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-header h1 {
-font-size:34px;
-color:#000;
-}
+    .brand h1 {
+      margin: 0 0 14px;
+      font-size: 42px;
+      color: #111;
+    }
 
-.produtos {
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-padding:20px;
-}
+    .search {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #ddd;
+      border-radius: 999px;
+      font-size: 16px;
+      outline: none;
+    }
 
-.produto {
-border:1px solid #eee;
-border-radius:15px;
-padding:15px;
-}
+    .hero {
+      max-width: 1200px;
+      margin: 24px auto 0;
+      padding: 0 20px;
+    }
 
-.carrossel {
-display:flex;
-overflow-x:auto;
-gap:10px;
-}
+    .hero-box {
+      background: linear-gradient(135deg, #101010, #2a2a2a);
+      color: #fff;
+      border-radius: 28px;
+      padding: 32px 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
 
-.carrossel img {
-width:100%;
-border-radius:10px;
-}
+    .hero-kicker {
+      color: #e5c16a;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 13px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
 
-video {
-width:100%;
-border-radius:10px;
-margin-top:10px;
-}
+    .hero h2 {
+      margin: 0 0 12px;
+      font-size: 38px;
+      line-height: 1.08;
+    }
 
-.preco {
-color:#000;
-font-size:22px;
-font-weight:bold;
-margin-top:10px;
-}
+    .hero p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #efefef;
+    }
 
-.botao {
-display:block;
-text-align:center;
-background:#000;
-color:#fff;
-padding:12px;
-border-radius:10px;
-margin-top:10px;
-text-decoration:none;
-font-weight:bold;
-}
+    .section {
+      max-width: 1200px;
+      margin: 28px auto 0;
+      padding: 0 20px 30px;
+    }
 
-.whats {
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-padding:15px;
-border-radius:50%;
-color:white;
-}
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 28px;
+      color: #111;
+    }
 
-h3 {margin-top:10px;}
-ul {padding-left:18px;}
-</style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      background: #fafafa;
+    }
+
+    .carousel img {
+      width: 100%;
+      min-width: 100%;
+      height: 320px;
+      object-fit: contain;
+      background: #fff;
+      scroll-snap-align: start;
+    }
+
+    .content {
+      padding: 22px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    .content h3 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      line-height: 1.15;
+      color: #111;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+      margin: 0 0 14px;
+    }
+
+    .benefits {
+      margin: 0 0 14px;
+      padding-left: 18px;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .howto {
+      margin: 0 0 14px;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .price {
+      font-size: 18px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    .price strong {
+      display: block;
+      color: #111;
+      font-size: 40px;
+      margin-top: 2px;
+    }
+
+    .buttons {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      padding: 14px 16px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    .btn-buy {
+      background: #111;
+      color: #fff;
+    }
+
+    .btn-buy:hover {
+      background: #000;
+    }
+
+    .btn-official {
+      background: #f1f1f1;
+      color: #111;
+    }
+
+    .btn-whats {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 28px;
+      box-shadow: 0 10px 20px rgba(37,211,102,0.35);
+      z-index: 100;
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      padding: 32px 20px 40px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .brand h1 { font-size: 34px; }
+      .hero h2 { font-size: 30px; }
+      .carousel img { height: 260px; }
+      .content h3 { font-size: 24px; }
+      .price strong { font-size: 34px; }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="topbar">🔥 IMPERIUM BEAUTY • MARCAS REAIS • OFERTAS ESPECIAIS • BELEZA PREMIUM 🔥</div>
 
-<div class="topo">
-🔥 IMPERIUM BEAUTY • FRETE GRÁTIS • RESULTADO PROFISSIONAL 🔥
-</div>
+  <header>
+    <div class="brand">
+      <h1>Imperium Beauty</h1>
+      <input class="search" type="text" placeholder="Buscar produtos, marcas e tratamentos" />
+    </div>
+  </header>
 
-<header>
-<h1>Imperium Beauty</h1>
-</header>
+  <section class="hero">
+    <div class="hero-box">
+      <div class="hero-kicker">beleza premium com marcas de verdade</div>
+      <h2>Produtos reais que chamam atenção e passam confiança</h2>
+      <p>
+        Loja com visual profissional, produtos conhecidos e descrição pronta para vender.
+        Aqui o foco é credibilidade, desejo e conversão.
+      </p>
+    </div>
+  </section>
 
-<section class="produtos">
+  <section class="section">
+    <h2 class="section-title">Cabelo</h2>
+    <div class="grid">
 
-<!-- PRODUTO 1 -->
-<div class="produto">
-<div class="carrossel">
-<img src="https://images.unsplash.com/photo-1585238342024-78d387f4a707">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-</div>
+      <!-- PRODUTO 1 -->
+      <article class="card">
+        <div class="carousel">
+          <img src="https://gamaitaly.vtexassets.com/arquivos/ids/167985-150-auto?aspect=true&height=auto&v=638887217717900000&width=150" alt="GA.MA Stylish Keration Brush 3D" />
+          <img src="https://gamaitaly.vtexassets.com/arquivos/ids/167986-150-auto?aspect=true&height=auto&v=638887217718870000&width=150" alt="GA.MA Stylish Keration Brush 3D vista frontal" />
+          <img src="https://gamaitaly.vtexassets.com/arquivos/ids/167987-150-auto?aspect=true&height=auto&v=638887217718870000&width=150" alt="GA.MA Stylish Keration Brush 3D detalhe" />
+        </div>
+        <div class="content">
+          <span class="tag">MAIS DESEJADO</span>
+          <h3>GA.MA Italy Stylish Keration Brush 3D</h3>
+          <p class="subtitle">
+            Escova secadora premium com visual profissional e forte apelo de venda.
+            Ideal para destacar sua vitrine com uma marca que passa confiança.
+          </p>
+          <ul class="benefits">
+            <li>1300W de potência para secagem rápida</li>
+            <li>Tecnologias 3D Therapy e Micro Glitt</li>
+            <li>2 temperaturas e 3 velocidades</li>
+            <li>Bivolt, formato oval e cabo giratório</li>
+            <li>Foco em brilho, flexibilidade e proteção da queratina</li>
+          </ul>
+          <p class="howto">
+            <strong>Como vender:</strong> destaque como “resultado de salão em casa” e
+            “praticidade + brilho + menos frizz”.
+          </p>
+          <div class="price">A partir de<strong>R$ 219,90</strong></div>
+          <div class="buttons">
+            <a class="btn btn-buy" href="#">💳 Comprar agora</a>
+            <a class="btn btn-official" href="https://www.gamaitaly.com.br/escova-secadora-gama-stylish-keration-brush-3d-bivolt-hdcbr0000000442/p" target="_blank" rel="noopener noreferrer">Ver produto oficial</a>
+          </div>
+        </div>
+      </article>
 
-<video controls>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-woman-drying-her-hair-4156-large.mp4">
-</video>
+      <!-- PRODUTO 2 -->
+      <article class="card">
+        <div class="carousel">
+          <img src="https://lojamondial.vtexassets.com/arquivos/ids/165396-150-150?aspect=true&height=150&v=638925902509830000&width=150" alt="Escova Secadora Mondial Black Rose" />
+          <img src="https://lojamondial.vtexassets.com/arquivos/ids/165397-150-150?aspect=true&height=150&v=638925902510000000&width=150" alt="Escova Secadora Mondial Black Rose keratin technology" />
+          <img src="https://lojamondial.vtexassets.com/arquivos/ids/165398-150-150?aspect=true&height=150&v=638925902510000000&width=150" alt="Escova Secadora Mondial Black Rose uso" />
+        </div>
+        <div class="content">
+          <span class="tag">OFERTA CHAMATIVA</span>
+          <h3>Mondial Black Rose ES-05-BI</h3>
+          <p class="subtitle">
+            Produto com apelo popular forte, visual bonito e nome que chama atenção na loja.
+            Excelente para vender como escova 3 em 1.
+          </p>
+          <ul class="benefits">
+            <li>Seca, alisa e modela no mesmo aparelho</li>
+            <li>1300W de potência</li>
+            <li>Revestimento com cerâmica e Tourmaline íon</li>
+            <li>Bivolt chaveado</li>
+            <li>Cerdas duplas, ponta fria e cabo 360°</li>
+          </ul>
+          <p class="howto">
+            <strong>Como vender:</strong> use chamada como “seca, alisa e modela com uma só mão”
+            e “escova 3 em 1”.
+          </p>
+          <div class="price">A partir de<strong>R$ 152,91</strong></div>
+          <div class="buttons">
+            <a class="btn btn-buy" href="#">💳 Comprar agora</a>
+            <a class="btn btn-official" href="https://www.mondial.com.br/escova-secadora-mondial-preto-golden-rose-1300w-es-05-bi/p" target="_blank" rel="noopener noreferrer">Ver produto oficial</a>
+          </div>
+        </div>
+      </article>
 
-<h3>Escova Secadora 5 em 1 Profissional</h3>
+    </div>
+  </section>
 
-<p><b>Resultado de salão em casa em poucos minutos.</b></p>
+  <section class="section">
+    <h2 class="section-title">Skincare</h2>
+    <div class="grid">
 
-<ul>
-<li>Alisa, seca e modela ao mesmo tempo</li>
-<li>Elimina frizz e aumenta o brilho</li>
-<li>Uso rápido e prático</li>
-</ul>
+      <!-- PRODUTO 3 -->
+      <article class="card">
+        <div class="carousel">
+          <img src="https://cdn.principiaskin.com/media/catalog/product/cache/a11fc81ad62814be31cd922a993aa5ec/p/r/principia-skincare-cosmeticos-niacinamida-acido-glicolico-salicilico-tranexamico-n-1.jpg" alt="Principia MIX-01" />
+        </div>
+        <div class="content">
+          <span class="tag">SKINCARE VIRAL</span>
+          <h3>Principia MIX-01</h3>
+          <p class="subtitle">
+            Sérum facial com visual forte de marca dermocosmética e ótimo apelo para acne,
+            oleosidade, cravos e textura irregular.
+          </p>
+          <ul class="benefits">
+            <li>5% niacinamida</li>
+            <li>4% ácido glicólico</li>
+            <li>3% ácido tranexâmico</li>
+            <li>2% ácido salicílico</li>
+            <li>Indicado para oleosidade, cravos, espinhas e poros</li>
+          </ul>
+          <p class="howto">
+            <strong>Como vender:</strong> use como “sérum antiacne e anti-oleosidade”
+            com linguagem de tratamento e rotina inteligente.
+          </p>
+          <div class="price">A partir de<strong>R$ 74,00</strong></div>
+          <div class="buttons">
+            <a class="btn btn-buy" href="#">💳 Comprar agora</a>
+            <a class="btn btn-official" href="https://www.principiaskin.com/serum-mix-01-niacinamida-acido-glicolico-tranexamico-salicilico.html" target="_blank" rel="noopener noreferrer">Ver produto oficial</a>
+          </div>
+        </div>
+      </article>
 
-<p><b>Como usar:</b> utilize com cabelo úmido para melhor resultado.</p>
+      <!-- PRODUTO 4 -->
+      <article class="card">
+        <div class="carousel">
+          <img src="https://cdn.principiaskin.com/media/catalog/product/cache/a11fc81ad62814be31cd922a993aa5ec/p/r/principia-skincare-anti-acne-gel-limpeza-acido-salicilico-glicerina-niacinamida-glicolico-tranexamico_1_1.jpg" alt="Kit antiacne Principia GL-01 + MIX-01" />
+        </div>
+        <div class="content">
+          <span class="tag">KIT COMPLETO</span>
+          <h3>Kit Antiacne Principia GL-01 + MIX-01</h3>
+          <p class="subtitle">
+            Kit pronto que vende bem porque resolve uma dor específica:
+            acne, cravos, oleosidade e poros dilatados.
+          </p>
+          <ul class="benefits">
+            <li>Gel de limpeza com 2% ácido salicílico e 5% glicerina</li>
+            <li>Sérum com quatro ativos para acne e oleosidade</li>
+            <li>Apelo de rotina completa</li>
+            <li>Boa vitrine para combo com ticket maior</li>
+          </ul>
+          <p class="howto">
+            <strong>Como vender:</strong> destaque como “kit rotina antiacne completa”
+            e “limpeza + tratamento”.
+          </p>
+          <div class="price">A partir de<strong>R$ 128,00</strong></div>
+          <div class="buttons">
+            <a class="btn btn-buy" href="#">💳 Comprar agora</a>
+            <a class="btn btn-official" href="https://www.principiaskin.com/kit-anti-acne-gl-01-mix-01-acido-salicilico-glicerina-tensoativos-niacinamida-glicolico-tranexamico.html" target="_blank" rel="noopener noreferrer">Ver produto oficial</a>
+          </div>
+        </div>
+      </article>
 
-<div class="preco">R$ 199,90</div>
+      <!-- PRODUTO 5 -->
+      <article class="card">
+        <div class="carousel">
+          <img src="https://www.laroche-posay.com.br/-/media/project/loreal/brand-sites/lrp/america/br/products/vitamina-c/2025/pure-vitamin-c12-serum/lrp-pure-vitamin-c12.png" alt="La Roche-Posay Pure Vitamin C12" />
+          <img src="https://www.laroche-posay.com.br/-/media/project/loreal/brand-sites/lrp/america/br/products/vitamina-c/2025/pure-vitamin-c12-serum/como-usar-pure-vitamin-c12.jpg" alt="La Roche-Posay Pure Vitamin C12 textura" />
+        </div>
+        <div class="content">
+          <span class="tag">PREMIUM</span>
+          <h3>La Roche-Posay Pure Vitamin C12 Sérum</h3>
+          <p class="subtitle">
+            Produto premium com cara de marca cara, ótimo para posicionar sua loja como
+            mais sofisticada e aumentar valor percebido.
+          </p>
+          <ul class="benefits">
+            <li>12% de vitamina C pura</li>
+            <li>Ação antioxidante e antirrugas</li>
+            <li>Uniformiza textura e tonalidade</li>
+            <li>Suaviza poros dilatados</li>
+            <li>Aplicação de 3 a 4 gotas, manhã e/ou noite</li>
+          </ul>
+          <p class="howto">
+            <strong>Como vender:</strong> destaque como “luminosidade imediata”
+            e “tratamento premium para pele radiante”.
+          </p>
+          <div class="price">Linha premium<strong>Consulte valor</strong></div>
+          <div class="buttons">
+            <a class="btn btn-buy" href="#">💳 Comprar agora</a>
+            <a class="btn btn-official" href="https://www.laroche-posay.com.br/vitamin-c/pure-vitamin-c12-serum" target="_blank" rel="noopener noreferrer">Ver produto oficial</a>
+          </div>
+        </div>
+      </article>
 
-<a href="#" class="botao">💳 Comprar agora</a>
-<a href="https://wa.me/5599999999999" class="botao" style="background:#25d366;">💬 WhatsApp</a>
-</div>
+    </div>
+  </section>
 
-<!-- PRODUTO 2 -->
-<div class="produto">
-<div class="carrossel">
-<img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb">
-<img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd">
-</div>
+  <footer>
+    © 2026 Imperium Beauty — Beleza premium com marcas reais
+  </footer>
 
-<video controls>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-woman-applying-face-serum-5074-large.mp4">
-</video>
-
-<h3>Sérum Vitamina C Premium</h3>
-
-<p><b>Pele iluminada e jovem todos os dias.</b></p>
-
-<ul>
-<li>Reduz linhas finas</li>
-<li>Clareia manchas</li>
-<li>Deixa a pele radiante</li>
-</ul>
-
-<div class="preco">R$ 79,90</div>
-
-<a href="#" class="botao">💳 Comprar agora</a>
-</div>
-
-<!-- PRODUTO 3 -->
-<div class="produto">
-<div class="carrossel">
-<img src="https://images.unsplash.com/photo-1556228720-195a672e8a03">
-<img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc">
-</div>
-
-<h3>Kit Skincare Completo</h3>
-
-<p><b>Rotina perfeita para uma pele impecável.</b></p>
-
-<ul>
-<li>Limpeza profunda</li>
-<li>Hidratação intensa</li>
-<li>Controle de oleosidade</li>
-</ul>
-
-<div class="preco">R$ 149,90</div>
-
-<a href="#" class="botao">💳 Comprar agora</a>
-</div>
-
-<!-- PRODUTO 4 -->
-<div class="produto">
-<div class="carrossel">
-<img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273">
-<img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc">
-</div>
-
-<h3>Kit Clareador Facial</h3>
-
-<p><b>Diga adeus às manchas.</b></p>
-
-<ul>
-<li>Uniformiza o tom</li>
-<li>Reduz manchas</li>
-</ul>
-
-<div class="preco">R$ 119,90</div>
-
-<a href="#" class="botao">💳 Comprar agora</a>
-</div>
-
-<!-- PRODUTO 5 -->
-<div class="produto">
-<div class="carrossel">
-<img src="https://images.unsplash.com/photo-1585238342024-78d387f4a707">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-</div>
-
-<h3>Kit Modelador Multifuncional</h3>
-
-<p><b>Versatilidade total para seu cabelo.</b></p>
-
-<ul>
-<li>Alisa e modela</li>
-<li>Fácil de usar</li>
-</ul>
-
-<div class="preco">R$ 219,90</div>
-
-<a href="#" class="botao">💳 Comprar agora</a>
-</div>
-
-</section>
-
-<a href="https://wa.me/5599999999999" class="whats">💬</a>
-
+  <a class="btn-whats" href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer">💬</a>
 </body>
 </html>
