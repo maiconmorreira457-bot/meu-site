@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maison Beauty</title>
+<title>Luxury Beauty</title>
 
 <style>
 body{margin:0;font-family:Arial;background:#fff}
@@ -19,16 +19,25 @@ color:#fff;
 }
 
 /* BANNER */
-.banner{position:relative;height:200px;overflow:hidden}
+.banner{position:relative;height:220px;overflow:hidden}
 .banner img{
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
 position:absolute;
 opacity:0;
 transition:1s;
 }
 .banner img.active{opacity:1}
+
+/* PROMO */
+.promo{
+text-align:center;
+padding:10px;
+background:#ffe6f0;
+color:#ff0077;
+font-weight:bold;
+}
 
 /* CARROSSEL */
 .carrossel{
@@ -58,7 +67,6 @@ box-shadow:0 2px 10px rgba(0,0,0,0.1);
 .produto img{width:100%;border-radius:10px}
 
 .preco{color:#00cc66;font-weight:bold}
-
 .botao{
 background:linear-gradient(90deg,#ff4da6,#ffd633);
 color:#fff;
@@ -78,98 +86,128 @@ right:20px;
 background:#25D366;
 padding:15px;
 border-radius:50%;
-color:white;
+color:#fff;
 }
 </style>
 </head>
 
 <body>
 
-<div class="topo">✨ Maison Beauty ✨</div>
+<div class="topo">✨ Luxury Beauty ✨</div>
 
-<!-- BANNER REAL -->
+<!-- BANNER -->
 <div class="banner">
 <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" class="active">
 <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
 <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a">
 </div>
 
+<div class="promo">🔥 OFERTAS DE HOJE • ATÉ 50% OFF</div>
+
 <!-- CARROSSEL -->
 <div class="carrossel">
 
-<div class="card">
 <img src="https://m.media-amazon.com/images/I/61x9z6lZ2QL._AC_SL1500_.jpg">
-<p>Sérum Vitamina C</p>
-</div>
-
-<div class="card">
 <img src="https://m.media-amazon.com/images/I/71xK6f0B0DL._AC_SL1500_.jpg">
-<p>Escova Secadora</p>
-</div>
-
-<div class="card">
 <img src="https://m.media-amazon.com/images/I/71f7s5H3HXL._AC_SL1500_.jpg">
-<p>Kit Skincare</p>
-</div>
 
 </div>
 
-<!-- LISTA GRANDE -->
+<!-- LISTA -->
 <div class="lista">
 
+<!-- PERFUMES -->
 <div class="produto">
-<img src="https://m.media-amazon.com/images/I/61x9z6lZ2QL._AC_SL1500_.jpg">
-<h3>Sérum Vitamina C</h3>
-<p>Pele iluminada e jovem</p>
+<img src="https://m.media-amazon.com/images/I/61vQzFj+0LL._AC_SL1500_.jpg">
+<h3>212 VIP Rosé - Feminino</h3>
+<p class="preco">R$399,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/71yN9Q1Z2FL._AC_SL1500_.jpg">
+<h3>La Belle - Feminino</h3>
+<p class="preco">R$379,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/71c1c+Jc6RL._AC_SL1500_.jpg">
+<h3>Good Girl - Feminino</h3>
+<p class="preco">R$429,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/61Z9x+Z8cYL._AC_SL1500_.jpg">
+<h3>Sauvage Dior - Masculino</h3>
+<p class="preco">R$459,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/71mS9uX7pZL._AC_SL1500_.jpg">
+<h3>1 Million - Masculino</h3>
+<p class="preco">R$399,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/61l9oGqWL3L._AC_SL1500_.jpg">
+<h3>Invictus - Masculino</h3>
+<p class="preco">R$389,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<!-- LA ROCHE -->
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/61CicaplastB5.jpg">
+<h3>Cicaplast Baume B5</h3>
 <p class="preco">R$79,90</p>
 <a class="botao" href="https://wa.me/5561995041672">Comprar</a>
 </div>
 
 <div class="produto">
-<img src="https://m.media-amazon.com/images/I/71xK6f0B0DL._AC_SL1500_.jpg">
-<h3>Escova Secadora</h3>
-<p>Resultado de salão</p>
-<p class="preco">R$189,90</p>
+<img src="https://m.media-amazon.com/images/I/61Effaclar.jpg">
+<h3>Effaclar Sérum</h3>
+<p class="preco">R$139,90</p>
 <a class="botao" href="https://wa.me/5561995041672">Comprar</a>
 </div>
 
+<!-- PRINCIPIA -->
 <div class="produto">
-<img src="https://m.media-amazon.com/images/I/71f7s5H3HXL._AC_SL1500_.jpg">
-<h3>Kit Skincare</h3>
-<p>Tratamento completo</p>
-<p class="preco">R$149,90</p>
-<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
-</div>
-
-<div class="produto">
-<img src="https://m.media-amazon.com/images/I/61X0Q0vGZ-L._AC_SL1500_.jpg">
-<h3>Base Líquida</h3>
-<p>Cobertura perfeita</p>
+<img src="https://m.media-amazon.com/images/I/61niacinamida.jpg">
+<h3>Niacinamida Principia</h3>
 <p class="preco">R$59,90</p>
 <a class="botao" href="https://wa.me/5561995041672">Comprar</a>
 </div>
 
 <div class="produto">
-<img src="https://m.media-amazon.com/images/I/61B4h8ZkYzL._AC_SL1500_.jpg">
-<h3>Gloss Labial</h3>
-<p>Brilho intenso</p>
-<p class="preco">R$29,90</p>
-<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
-</div>
-
-<div class="produto">
-<img src="https://m.media-amazon.com/images/I/71G6v6C+JHL._AC_SL1500_.jpg">
-<h3>Perfume Feminino</h3>
-<p>Fragrância marcante</p>
-<p class="preco">R$129,90</p>
-<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
-</div>
-
-<div class="produto">
-<img src="https://m.media-amazon.com/images/I/71Yk5VbV3SL._AC_SL1500_.jpg">
-<h3>Máscara Capilar</h3>
-<p>Hidratação profunda</p>
+<img src="https://m.media-amazon.com/images/I/61retinol.jpg">
+<h3>Retinol Principia</h3>
 <p class="preco">R$69,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<!-- CABELO -->
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/71escova.jpg">
+<h3>Escova Secadora</h3>
+<p class="preco">R$189,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/71chapinha.jpg">
+<h3>Chapinha Profissional</h3>
+<p class="preco">R$149,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/71modelador.jpg">
+<h3>Modelador de Cachos</h3>
+<p class="preco">R$139,90</p>
 <a class="botao" href="https://wa.me/5561995041672">Comprar</a>
 </div>
 
@@ -178,11 +216,11 @@ color:white;
 <a class="whatsapp" href="https://wa.me/5561995041672">💬</a>
 
 <script>
-let slides = document.querySelectorAll(".banner img");
-let i = 0;
+let slides=document.querySelectorAll(".banner img");
+let i=0;
 setInterval(()=>{
 slides[i].classList.remove("active");
-i = (i+1)%slides.length;
+i=(i+1)%slides.length;
 slides[i].classList.add("active");
 },3000);
 </script>
