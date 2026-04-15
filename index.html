@@ -6,109 +6,79 @@
 <title>Maison Beauty</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #fff;
-}
+body{margin:0;font-family:Arial;background:#fff}
 
 /* TOPO */
-.topo {
-  padding: 15px;
-  text-align: center;
-  font-size: 22px;
-  font-weight: bold;
-  background: linear-gradient(90deg,#ff4da6,#ffd633);
-  color: white;
+.topo{
+padding:15px;
+text-align:center;
+font-size:22px;
+font-weight:bold;
+background:linear-gradient(90deg,#ff4da6,#ffd633);
+color:#fff;
 }
 
 /* BANNER */
-.banner {
-  position: relative;
-  height: 200px;
-  overflow: hidden;
+.banner{position:relative;height:200px;overflow:hidden}
+.banner img{
+width:100%;
+height:200px;
+object-fit:cover;
+position:absolute;
+opacity:0;
+transition:1s;
 }
-
-.banner img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  position: absolute;
-  transition: opacity 1s;
-}
-
-.banner img.active {
-  opacity: 1;
-}
-
-.banner img {
-  opacity: 0;
-}
+.banner img.active{opacity:1}
 
 /* CARROSSEL */
-.carrossel {
-  display: flex;
-  overflow-x: auto;
-  padding: 10px;
-  gap: 10px;
+.carrossel{
+display:flex;
+overflow-x:auto;
+padding:10px;
+gap:10px;
 }
-
-.card {
-  min-width: 150px;
-  background: #fff;
-  border-radius: 15px;
-  padding: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.card{
+min-width:150px;
+background:#fff;
+border-radius:15px;
+padding:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
+.card img{width:100%;border-radius:10px}
 
-.card img {
-  width: 100%;
-  border-radius: 10px;
+/* LISTA */
+.lista{padding:15px}
+.produto{
+background:#fff;
+border-radius:15px;
+padding:15px;
+margin-bottom:15px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
+.produto img{width:100%;border-radius:10px}
 
-/* LISTA GRANDE */
-.lista {
-  padding: 15px;
-}
+.preco{color:#00cc66;font-weight:bold}
 
-.produto {
-  background: #fff;
-  border-radius: 15px;
-  padding: 15px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.produto img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.preco {
-  color: #00cc66;
-  font-weight: bold;
-}
-
-.botao {
-  background: linear-gradient(90deg,#ff4da6,#ffd633);
-  color: white;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-  text-decoration: none;
-  display: block;
-  margin-top: 10px;
+.botao{
+background:linear-gradient(90deg,#ff4da6,#ffd633);
+color:#fff;
+padding:10px;
+text-align:center;
+border-radius:10px;
+text-decoration:none;
+display:block;
+margin-top:10px;
 }
 
 /* WHATS */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-  color: white;
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+color:white;
 }
 </style>
 </head>
@@ -117,54 +87,89 @@ body {
 
 <div class="topo">✨ Maison Beauty ✨</div>
 
-<!-- BANNER INTERATIVO -->
+<!-- BANNER REAL -->
 <div class="banner">
 <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" class="active">
 <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-<img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
+<img src="https://images.unsplash.com/photo-1612817288484-6f916006741a">
 </div>
 
 <!-- CARROSSEL -->
 <div class="carrossel">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb">
+<img src="https://m.media-amazon.com/images/I/61x9z6lZ2QL._AC_SL1500_.jpg">
 <p>Sérum Vitamina C</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f">
+<img src="https://m.media-amazon.com/images/I/71xK6f0B0DL._AC_SL1500_.jpg">
 <p>Escova Secadora</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908">
+<img src="https://m.media-amazon.com/images/I/71f7s5H3HXL._AC_SL1500_.jpg">
 <p>Kit Skincare</p>
 </div>
 
 </div>
 
-<!-- LISTA COMPLETA -->
+<!-- LISTA GRANDE -->
 <div class="lista">
 
 <div class="produto">
-<img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb">
+<img src="https://m.media-amazon.com/images/I/61x9z6lZ2QL._AC_SL1500_.jpg">
 <h3>Sérum Vitamina C</h3>
+<p>Pele iluminada e jovem</p>
 <p class="preco">R$79,90</p>
 <a class="botao" href="https://wa.me/5561995041672">Comprar</a>
 </div>
 
 <div class="produto">
-<img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f">
+<img src="https://m.media-amazon.com/images/I/71xK6f0B0DL._AC_SL1500_.jpg">
 <h3>Escova Secadora</h3>
+<p>Resultado de salão</p>
 <p class="preco">R$189,90</p>
 <a class="botao" href="https://wa.me/5561995041672">Comprar</a>
 </div>
 
 <div class="produto">
-<img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908">
+<img src="https://m.media-amazon.com/images/I/71f7s5H3HXL._AC_SL1500_.jpg">
 <h3>Kit Skincare</h3>
+<p>Tratamento completo</p>
 <p class="preco">R$149,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/61X0Q0vGZ-L._AC_SL1500_.jpg">
+<h3>Base Líquida</h3>
+<p>Cobertura perfeita</p>
+<p class="preco">R$59,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/61B4h8ZkYzL._AC_SL1500_.jpg">
+<h3>Gloss Labial</h3>
+<p>Brilho intenso</p>
+<p class="preco">R$29,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/71G6v6C+JHL._AC_SL1500_.jpg">
+<h3>Perfume Feminino</h3>
+<p>Fragrância marcante</p>
+<p class="preco">R$129,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<div class="produto">
+<img src="https://m.media-amazon.com/images/I/71Yk5VbV3SL._AC_SL1500_.jpg">
+<h3>Máscara Capilar</h3>
+<p>Hidratação profunda</p>
+<p class="preco">R$69,90</p>
 <a class="botao" href="https://wa.me/5561995041672">Comprar</a>
 </div>
 
@@ -174,13 +179,12 @@ body {
 
 <script>
 let slides = document.querySelectorAll(".banner img");
-let index = 0;
-
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 3000);
+let i = 0;
+setInterval(()=>{
+slides[i].classList.remove("active");
+i = (i+1)%slides.length;
+slides[i].classList.add("active");
+},3000);
 </script>
 
 </body>
