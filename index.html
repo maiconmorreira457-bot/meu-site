@@ -3,35 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imperium Beauty</title>
+<title>Velvet Beauty</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: #fff;
+    font-family: 'Arial', sans-serif;
+    background: #fff;
+    color: #333;
 }
 
-header {
-    background: #000;
-    padding: 20px;
+/* TOPO */
+.topo {
+    background: linear-gradient(90deg, #ff4da6, #ffcc33);
+    padding: 10px;
     text-align: center;
-    border-bottom: 2px solid gold;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* HEADER */
+header {
+    padding: 20px;
 }
 
 header h1 {
-    color: gold;
     font-size: 32px;
+    background: linear-gradient(90deg, #ff4da6, #ffcc33);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
+.busca {
+    margin-top: 10px;
+}
+
+.busca input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+/* BANNER */
 .banner {
-    background: linear-gradient(90deg, black, gold);
+    background: #111;
+    color: #fff;
     padding: 30px;
+    margin: 20px;
+    border-radius: 20px;
     text-align: center;
-    font-size: 20px;
 }
 
+/* PRODUTOS */
 .produtos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -40,11 +64,9 @@ header h1 {
 }
 
 .produto {
-    background: #111;
-    border: 1px solid gold;
-    border-radius: 10px;
+    border: 1px solid #eee;
+    border-radius: 15px;
     padding: 15px;
-    text-align: center;
 }
 
 .produto img {
@@ -52,31 +74,44 @@ header h1 {
     border-radius: 10px;
 }
 
-.preco {
-    color: gold;
-    font-size: 22px;
-    margin: 10px 0;
+.video {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
-.botao {
-    background: gold;
-    color: black;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.preco {
+    color: #ff4da6;
+    font-size: 20px;
     font-weight: bold;
 }
 
-.botao:hover {
-    background: #d4af37;
+.botao {
+    background: #ff4da6;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid gold;
-    margin-top: 20px;
+.botao:hover {
+    background: #e60073;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
 }
 </style>
 
@@ -84,45 +119,70 @@ footer {
 
 <body>
 
+<div class="topo">
+✨ OFERTAS DESBLOQUEADAS • FRETE GRÁTIS • BELEZA PREMIUM ✨
+</div>
+
 <header>
-    <h1>IMPERIUM BEAUTY</h1>
+    <h1>Velvet Beauty</h1>
+    <div class="busca">
+        <input type="text" placeholder="Buscar produtos...">
+    </div>
 </header>
 
 <div class="banner">
-    🔥 OFERTAS EXCLUSIVAS • RESULTADO PROFISSIONAL EM CASA 🔥
+    <h2>Ofertas exclusivas para sua beleza</h2>
+    <p>Produtos premium com resultado de salão</p>
 </div>
 
 <section class="produtos">
 
+<!-- PRODUTO 1 -->
 <div class="produto">
     <img src="https://via.placeholder.com/300" alt="Escova Secadora">
+    
+    <video class="video" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+
     <h3>Escova Secadora Profissional</h3>
-    <p>Seca, alisa e modela em minutos.</p>
+    <p>
+    Alise, seque e modele em minutos. Tecnologia profissional para um cabelo perfeito todos os dias.
+    </p>
+
     <div class="preco">R$ 199,90</div>
     <button class="botao">Comprar agora</button>
 </div>
 
+<!-- PRODUTO 2 -->
 <div class="produto">
-    <img src="https://via.placeholder.com/300" alt="Sérum Capilar">
+    <img src="https://via.placeholder.com/300" alt="Sérum">
+
     <h3>Sérum Capilar Premium</h3>
-    <p>Brilho intenso e hidratação profunda.</p>
+    <p>
+    Hidratação profunda, brilho intenso e controle total do frizz desde a primeira aplicação.
+    </p>
+
     <div class="preco">R$ 89,90</div>
     <button class="botao">Comprar agora</button>
 </div>
 
+<!-- PRODUTO 3 -->
 <div class="produto">
-    <img src="https://via.placeholder.com/300" alt="Kit Completo">
-    <h3>Kit Completo Imperium</h3>
-    <p>Resultado de salão sem sair de casa.</p>
+    <img src="https://via.placeholder.com/300" alt="Kit">
+
+    <h3>Kit Completo Velvet</h3>
+    <p>
+    O combo perfeito para transformar seu cabelo com qualidade profissional em casa.
+    </p>
+
     <div class="preco">R$ 249,90</div>
     <button class="botao">Comprar agora</button>
 </div>
 
 </section>
 
-<footer>
-    © 2026 Imperium Beauty - Todos os direitos reservados
-</footer>
+<a href="#" class="whatsapp">💬</a>
 
 </body>
 </html>
