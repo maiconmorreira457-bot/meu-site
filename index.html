@@ -3,110 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imperium Beauty Club</title>
+<title>Maison Beauty Luxo</title>
 
 <style>
 body {
-margin:0;
-font-family: Arial;
-background:#f9f5f7;
+  margin: 0;
+  font-family: Arial;
+  background: #0d0d0d;
+  color: white;
 }
 
-/* TOPO */
 .topo {
-background: linear-gradient(90deg,#ff4fa3,#ffc44d);
-color:#fff;
-text-align:center;
-padding:12px;
-font-weight:bold;
+  padding: 20px;
+  text-align: center;
 }
 
-/* HEADER */
-header {
-background:#fff;
-padding:25px;
+.topo h1 {
+  color: gold;
 }
 
-.logo {
-font-size:40px;
-font-weight:900;
-background: linear-gradient(90deg,#ff4fa3,#ffc44d);
--webkit-background-clip:text;
-color:transparent;
-}
-
-/* BANNER */
 .banner {
-margin:20px;
-padding:30px;
-border-radius:25px;
-background: linear-gradient(135deg,#2a0c1f,#7a2f52,#c88c2e);
-color:#fff;
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(135deg, #000, #2a002a);
 }
 
-/* PRODUTOS */
 .produtos {
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-padding:20px;
+  padding: 20px;
 }
 
 .produto {
-background:#fff;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
 .produto img {
-width:100%;
-height:320px;
-object-fit:cover;
+  width: 100%;
+  border-radius: 10px;
 }
 
-.info {
-padding:18px;
-}
-
-.titulo {
-font-size:22px;
-font-weight:bold;
-margin-bottom:8px;
-}
-
-.desc {
-color:#666;
-font-size:14px;
-line-height:1.6;
+.produto h3 {
+  color: gold;
 }
 
 .preco {
-font-size:26px;
-font-weight:bold;
-margin-top:10px;
+  color: #00ff88;
+  font-weight: bold;
 }
 
 .botao {
-display:block;
-margin-top:12px;
-padding:14px;
-border-radius:12px;
-text-align:center;
-text-decoration:none;
-font-weight:bold;
-background: linear-gradient(90deg,#ff4fa3,#ffc44d);
-color:#fff;
+  display: block;
+  background: gold;
+  color: black;
+  padding: 12px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 10px;
+  text-decoration: none;
 }
 
-.whats {
-position:fixed;
-bottom:15px;
-right:15px;
-background:#25d366;
-padding:14px;
-border-radius:50%;
-color:#fff;
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
 }
 </style>
 </head>
@@ -114,62 +80,81 @@ color:#fff;
 <body>
 
 <div class="topo">
-✨ BELEZA PREMIUM • OFERTAS EXCLUSIVAS • FRETE ESPECIAL ✨
+  <h1>✨ Maison Beauty ✨</h1>
 </div>
-
-<header>
-<div class="logo">Imperium Beauty Club</div>
-</header>
 
 <div class="banner">
-<h2>Descubra o luxo da sua melhor versão</h2>
-<p>Produtos desejados que elevam sua rotina de beleza</p>
+  <h2>Beleza de luxo para resultados reais</h2>
 </div>
 
-<section class="produtos">
+<div class="produtos">
 
-<!-- ESCOVA -->
+<!-- 1 -->
 <div class="produto">
-<img src="https://cdn.awsli.com.br/2500x2500/250/250613/produto/17368874/escova-secadora-mondial-rose-gold-0a8a90d9.jpg">
-<div class="info">
-<div class="titulo">Escova Secadora Premium 5 em 1</div>
-<div class="desc">
-Transforme seu cabelo com acabamento impecável, brilho intenso e efeito digno de salão todos os dias.
-</div>
-<div class="preco">R$ 199,90</div>
-<a href="#" class="botao">Comprar agora</a>
-</div>
+<img src="https://i.imgur.com/3ZQ3Z5G.jpg">
+<h3>Sérum Vitamina C</h3>
+<p>Clareia manchas e deixa a pele radiante.</p>
+<p class="preco">R$ 79,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
 </div>
 
-<!-- SERUM -->
+<!-- 2 -->
 <div class="produto">
-<img src="https://images.tcdn.com.br/img/img_prod/699275/serum_vitamina_c_la_roche_posay_30ml_13251_1_20201209153802.jpg">
-<div class="info">
-<div class="titulo">Sérum Vitamina C Luxo</div>
-<div class="desc">
-Uma pele iluminada, uniforme e radiante com um toque sofisticado de cuidado diário.
-</div>
-<div class="preco">R$ 79,90</div>
-<a href="#" class="botao">Comprar agora</a>
-</div>
+<img src="https://i.imgur.com/8Km9tLL.jpg">
+<h3>Escova Secadora</h3>
+<p>Alisa e modela com efeito salão.</p>
+<p class="preco">R$ 189,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
 </div>
 
-<!-- KIT -->
+<!-- 3 -->
 <div class="produto">
-<img src="https://cdn.awsli.com.br/2500x2500/1267/1267204/produto/170913244/kit-facial-3-produtos-3h5f7h5g7h.jpg">
-<div class="info">
-<div class="titulo">Kit Facial Premium</div>
-<div class="desc">
-Uma experiência completa de cuidado para uma pele renovada, luminosa e irresistível.
-</div>
-<div class="preco">R$ 119,90</div>
-<a href="#" class="botao">Comprar agora</a>
-</div>
+<img src="https://i.imgur.com/4VQZ4bC.jpg">
+<h3>Kit Skincare</h3>
+<p>Rotina completa para pele perfeita.</p>
+<p class="preco">R$ 149,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
 </div>
 
-</section>
+<!-- 4 -->
+<div class="produto">
+<img src="https://i.imgur.com/Yp3FQxA.jpg">
+<h3>Base Líquida Premium</h3>
+<p>Cobertura perfeita e acabamento natural.</p>
+<p class="preco">R$ 59,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
 
-<a href="#" class="whats">💬</a>
+<!-- 5 -->
+<div class="produto">
+<img src="https://i.imgur.com/qkdpN.jpg">
+<h3>Gloss Labial</h3>
+<p>Brilho intenso e hidratação.</p>
+<p class="preco">R$ 29,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<!-- 6 -->
+<div class="produto">
+<img src="https://i.imgur.com/9JgZ3sG.jpg">
+<h3>Perfume Feminino Luxo</h3>
+<p>Fragrância marcante e sofisticada.</p>
+<p class="preco">R$ 129,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+<!-- 7 -->
+<div class="produto">
+<img src="https://i.imgur.com/2nCt3Sbl.jpg">
+<h3>Máscara Capilar</h3>
+<p>Hidratação profunda e brilho intenso.</p>
+<p class="preco">R$ 69,90</p>
+<a class="botao" href="https://wa.me/5561995041672">Comprar</a>
+</div>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/5561995041672">💬</a>
 
 </body>
 </html>
