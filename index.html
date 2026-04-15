@@ -221,4 +221,386 @@
     }
 
     .old-price {
-      color: #8d8475
+      color: #8d8475;
+      text-decoration: line-through;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .price {
+      color: #d4af37;
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .buy-btn {
+      background: linear-gradient(135deg, #8a6a2f, #d4af37);
+      color: #111;
+      padding: 13px 18px;
+      border-radius: 12px;
+    }
+
+    .gallery-btn {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(212,175,55,0.25);
+      padding: 13px 18px;
+      border-radius: 12px;
+    }
+
+    .video-box {
+      margin-top: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(212,175,55,0.12);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .video-box h4 {
+      color: #f2dfa2;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #000;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .luxury-box {
+      margin-top: 36px;
+      background: linear-gradient(180deg, #101010, #1b1b1b);
+      border: 1px solid rgba(212,175,55,0.18);
+      border-radius: 24px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    .luxury-box h2 {
+      color: #d4af37;
+      font-family: Georgia, serif;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .luxury-box p {
+      color: #d8cfbe;
+      line-height: 1.8;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .benefit {
+      background: rgba(212,175,55,0.06);
+      border: 1px solid rgba(212,175,55,0.16);
+      border-radius: 16px;
+      padding: 16px;
+      color: #f0e5c9;
+      font-weight: bold;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      z-index: 999;
+    }
+
+    footer {
+      text-align: center;
+      color: #a89d87;
+      padding: 28px 16px 40px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        border-right: 0;
+        border-bottom: 1px solid rgba(212,175,55,0.10);
+      }
+
+      .main-photo img {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .thumbs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .thumbs img {
+        height: 90px;
+      }
+
+      .details h3 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">LUXO • EXCLUSIVIDADE • BELEZA PREMIUM • PEDIDO DIRETO PELO WHATSAPP</div>
+
+  <section class="hero">
+    <div class="hero-box">
+      <div class="mini">Maison Noire Beauty</div>
+      <h1>Beleza intensa, elegante e feita para mulheres de presença</h1>
+      <p>
+        Uma seleção refinada de produtos premium para quem valoriza sofisticação,
+        sensualidade, cuidado e um visual marcante em cada detalhe.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn-gold" href="#colecao">Ver coleção exclusiva</a>
+        <a class="btn-dark" href="https://wa.me/5561995041672?text=Olá%20quero%20atendimento%20premium">Atendimento premium</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" id="colecao">
+    <div class="section-head">
+      <h2>Coleção de Luxo</h2>
+      <p>Galerias mais completas, descrição profissional, vídeos de demonstração e compra rápida no WhatsApp.</p>
+    </div>
+
+    <div class="product-card">
+      <div class="product-grid">
+        <div class="gallery">
+          <div class="main-photo">
+            <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?auto=format&fit=crop&w=1200&q=80" alt="Sérum Vitamina C">
+          </div>
+          <div class="thumbs">
+            <img src="https://images.unsplash.com/photo-1611080541599-8c6dbde6ed28?auto=format&fit=crop&w=800&q=80" alt="Sérum Vitamina C 1">
+            <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80" alt="Sérum Vitamina C 2">
+            <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80" alt="Sérum Vitamina C 3">
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="tag">Skincare premium</div>
+          <h3>Sérum Vitamina C</h3>
+          <p>
+            Fórmula pensada para uma rotina facial mais sofisticada, com textura leve,
+            sensação agradável na pele e acabamento elegante no dia a dia.
+          </p>
+          <ul class="benefits">
+            <li>Ajuda a deixar a pele mais iluminada</li>
+            <li>Valoriza o viço natural do rosto</li>
+            <li>Ótimo para rotina de autocuidado</li>
+            <li>Textura leve e fácil de aplicar</li>
+          </ul>
+          <p><strong>Como usar:</strong> aplique no rosto limpo, antes do hidratante, de manhã ou à noite.</p>
+          <p><strong>Indicação:</strong> rotina facial diária.</p>
+          <div class="old-price">R$ 119,90</div>
+          <div class="price">R$ 79,90</div>
+
+          <div class="cta-row">
+            <a class="buy-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20comprar%20o%20Sérum%20Vitamina%20C">Comprar agora</a>
+            <a class="gallery-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20ver%20mais%20fotos%20do%20Sérum%20Vitamina%20C">Ver mais no WhatsApp</a>
+          </div>
+
+          <div class="video-box">
+            <h4>Demonstração</h4>
+            <div class="video-wrap">
+              <iframe src="https://www.youtube.com/embed/l_GiJwTRUXQ" title="Vitamina C skincare" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-grid">
+        <div class="gallery">
+          <div class="main-photo">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80" alt="Escova Secadora">
+          </div>
+          <div class="thumbs">
+            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" alt="Escova Secadora 1">
+            <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80" alt="Escova Secadora 2">
+            <img src="https://images.unsplash.com/photo-1596704017254-9d74f8e2a7c0?auto=format&fit=crop&w=800&q=80" alt="Escova Secadora 3">
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="tag">Hair premium</div>
+          <h3>Escova Secadora</h3>
+          <p>
+            Ideal para quem quer um acabamento com presença e mais praticidade na rotina,
+            unindo beleza, rapidez e sensação de cabelo bem cuidado.
+          </p>
+          <ul class="benefits">
+            <li>Ajuda a alinhar e modelar o cabelo</li>
+            <li>Visual com efeito mais sofisticado</li>
+            <li>Praticidade no dia a dia</li>
+            <li>Ótima para acabamento e escovação</li>
+          </ul>
+          <p><strong>Como usar:</strong> utilize com o cabelo úmido ou seco, conforme a sua rotina de finalização.</p>
+          <p><strong>Indicação:</strong> quem busca praticidade e efeito de cabelo alinhado.</p>
+          <div class="old-price">R$ 229,90</div>
+          <div class="price">R$ 149,90</div>
+
+          <div class="cta-row">
+            <a class="buy-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20comprar%20a%20Escova%20Secadora">Comprar agora</a>
+            <a class="gallery-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20ver%20mais%20fotos%20da%20Escova%20Secadora">Ver mais no WhatsApp</a>
+          </div>
+
+          <div class="video-box">
+            <h4>Demonstração</h4>
+            <div class="video-wrap">
+              <iframe src="https://www.youtube.com/embed/Cj0Yda3Z5jU" title="Demonstração de rotina" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-grid">
+        <div class="gallery">
+          <div class="main-photo">
+            <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=1200&q=80" alt="Gloss Premium">
+          </div>
+          <div class="thumbs">
+            <img src="https://images.unsplash.com/photo-1631214540242-7df8d6d62d0a?auto=format&fit=crop&w=800&q=80" alt="Gloss Premium 1">
+            <img src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?auto=format&fit=crop&w=800&q=80" alt="Gloss Premium 2">
+            <img src="https://images.unsplash.com/photo-1631730359585-38a4935cbec4?auto=format&fit=crop&w=800&q=80" alt="Gloss Premium 3">
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="tag">Make glam</div>
+          <h3>Gloss Premium</h3>
+          <p>
+            Um toque de brilho sofisticado para destacar o visual com charme,
+            feminilidade e presença em qualquer ocasião.
+          </p>
+          <ul class="benefits">
+            <li>Brilho elegante no acabamento</li>
+            <li>Sensação confortável nos lábios</li>
+            <li>Visual mais marcante e luxuoso</li>
+            <li>Ótimo para o dia e para a noite</li>
+          </ul>
+          <p><strong>Como usar:</strong> aplique diretamente nos lábios sempre que quiser realçar o brilho.</p>
+          <p><strong>Indicação:</strong> maquiagem com acabamento sofisticado.</p>
+          <div class="old-price">R$ 59,90</div>
+          <div class="price">R$ 39,90</div>
+
+          <div class="cta-row">
+            <a class="buy-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20comprar%20o%20Gloss%20Premium">Comprar agora</a>
+            <a class="gallery-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20ver%20mais%20fotos%20do%20Gloss%20Premium">Ver mais no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-grid">
+        <div class="gallery">
+          <div class="main-photo">
+            <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1200&q=80" alt="Kit Skincare">
+          </div>
+          <div class="thumbs">
+            <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&w=800&q=80" alt="Kit Skincare 1">
+            <img src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=800&q=80" alt="Kit Skincare 2">
+            <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?auto=format&fit=crop&w=800&q=80" alt="Kit Skincare 3">
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="tag">Rotina completa</div>
+          <h3>Kit Skincare</h3>
+          <p>
+            Um conjunto visualmente elegante para uma rotina de cuidados mais completa,
+            pensado para quem gosta de praticidade e estética premium.
+          </p>
+          <ul class="benefits">
+            <li>Mais praticidade na rotina de beleza</li>
+            <li>Visual sofisticado para autocuidado</li>
+            <li>Ótimo para quem gosta de kit completo</li>
+            <li>Sensação de rotina mais organizada</li>
+          </ul>
+          <p><strong>Como usar:</strong> siga a ordem da sua rotina facial, da limpeza à finalização.</p>
+          <p><strong>Indicação:</strong> quem prefere uma rotina de cuidados mais completa.</p>
+          <div class="old-price">R$ 179,90</div>
+          <div class="price">R$ 119,90</div>
+
+          <div class="cta-row">
+            <a class="buy-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20comprar%20o%20Kit%20Skincare">Comprar agora</a>
+            <a class="gallery-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20ver%20mais%20fotos%20do%20Kit%20Skincare">Ver mais no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="luxury-box">
+      <h2>Uma experiência de beleza mais completa</h2>
+      <p>
+        Seu site agora fica com cara de marca premium: banner forte, galeria com várias imagens,
+        descrição mais profissional, preço bem visível, botão direto para compra e uma área de demonstração.
+      </p>
+
+      <div class="benefit-grid">
+        <div class="benefit">Visual preto e dourado</div>
+        <div class="benefit">Galeria com várias fotos</div>
+        <div class="benefit">Compra rápida no WhatsApp</div>
+        <div class="benefit">Descrição mais completa</div>
+      </div>
+    </div>
+  </div>
+
+  <a class="whatsapp-float" href="https://wa.me/5561995041672?text=Olá%20quero%20atendimento%20premium" aria-label="WhatsApp">✆</a>
+
+  <footer>
+    © 2026 Maison Noire Beauty • Beleza premium com presença
+  </footer>
+
+</body>
+</html>
