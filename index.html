@@ -3,56 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Beauty</title>
+<title>Maison Noire Beauty</title>
 
 <style>
-body {
-  margin:0;
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
   font-family: Arial;
-  background: #0d0d0d;
-  color: white;
+  background:#0a0a0a;
+  color:#fff;
 }
 
-header {
+.topo{
+  background:linear-gradient(90deg,#8a6a2f,#d4af37,#8a6a2f);
   text-align:center;
-  padding:40px;
-  background: linear-gradient(135deg,#000,#1a1a1a);
+  padding:10px;
+  font-size:12px;
+  font-weight:bold;
 }
 
-header h1 {
-  color: gold;
-  font-size: 32px;
-}
-
-.container {
+.hero{
+  height:90vh;
+  background:
+  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+  url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
   padding:20px;
 }
 
-.grid {
+.hero h1{
+  font-size:38px;
+  color:#f5d76e;
+}
+
+.hero p{
+  margin-top:10px;
+  color:#ddd;
+}
+
+.container{
+  padding:30px;
+}
+
+.grid{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:20px;
 }
 
-.card {
-  background:#1a1a1a;
+.card{
+  background:#111;
   border-radius:15px;
-  padding:15px;
+  padding:10px;
   text-align:center;
 }
 
-.card img {
+.card img{
   width:100%;
   border-radius:10px;
 }
 
-.price {
-  color: gold;
+.price{
+  color:gold;
   font-size:22px;
   margin:10px 0;
 }
 
-.btn {
+.btn{
   display:block;
   background:#25d366;
   padding:10px;
@@ -61,22 +81,41 @@ header h1 {
   text-decoration:none;
   font-weight:bold;
 }
+
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  color:white;
+}
 </style>
 </head>
 
 <body>
 
-<header>
+<div class="topo">LUXO • BELEZA • EXCLUSIVIDADE</div>
+
+<div class="hero">
+<div>
 <h1>💎 Luxury Beauty 💎</h1>
 <p>Produtos premium para mulheres de alto padrão</p>
-</header>
+</div>
+</div>
 
 <div class="container">
 
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+<img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137">
 <h3>Sérum Vitamina C</h3>
 <p>Pele perfeita e iluminada</p>
 <div class="price">R$ 79,90</div>
@@ -86,7 +125,7 @@ header h1 {
 <div class="card">
 <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
 <h3>Escova Secadora</h3>
-<p>Cabelo de salão em casa</p>
+<p>Cabelo de salão</p>
 <div class="price">R$ 149,90</div>
 <a class="btn" href="https://wa.me/5511999999999?text=Quero%20a%20Escova">Comprar</a>
 </div>
@@ -94,22 +133,24 @@ header h1 {
 <div class="card">
 <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa">
 <h3>Gloss Premium</h3>
-<p>Lábios volumosos e luxuosos</p>
+<p>Lábios luxuosos</p>
 <div class="price">R$ 39,90</div>
 <a class="btn" href="https://wa.me/5511999999999?text=Quero%20o%20Gloss">Comprar</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
-<h3>Massageador Facial</h3>
-<p>Rejuvenescimento instantâneo</p>
-<div class="price">R$ 89,90</div>
-<a class="btn" href="https://wa.me/5511999999999?text=Quero%20o%20Massageador">Comprar</a>
+<img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883">
+<h3>Kit Skincare</h3>
+<p>Rotina completa</p>
+<div class="price">R$ 119,90</div>
+<a class="btn" href="https://wa.me/5561995041672?text=Quero%20o%20Kit">Comprar</a>
 </div>
 
 </div>
 
 </div>
+
+<a class="whatsapp" href="https://wa.me/5511999999999">💬</a>
 
 </body>
 </html>
