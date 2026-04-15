@@ -1,640 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maison Beauty Luxe</title>
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imperium Beauty</title>
 
-    html{
-      scroll-behavior:smooth;
-    }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
 
-    body{
-      font-family: Arial, sans-serif;
-      background:#fff7fb;
-      color:#222;
-    }
+header {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid gold;
+}
 
-    a{
-      text-decoration:none;
-    }
+header h1 {
+    color: gold;
+    font-size: 32px;
+}
 
-    .promo-bar{
-      background: linear-gradient(90deg, #ff4fa3, #f7c948, #ff4fa3);
-      color:#111;
-      text-align:center;
-      padding:12px 10px;
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:1px;
-      text-transform:uppercase;
-    }
+.banner {
+    background: linear-gradient(90deg, black, gold);
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+}
 
-    .top-header{
-      background:#ffffff;
-      border-bottom:1px solid #f0d7e6;
-      padding:14px 16px;
-      position:sticky;
-      top:0;
-      z-index:50;
-    }
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
 
-    .top-header-inner{
-      max-width:1200px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-    }
+.produto {
+    background: #111;
+    border: 1px solid gold;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
 
-    .logo{
-      font-size:28px;
-      font-weight:800;
-      color:#d63384;
-    }
+.produto img {
+    width: 100%;
+    border-radius: 10px;
+}
 
-    .logo span{
-      color:#f7c948;
-    }
+.preco {
+    color: gold;
+    font-size: 22px;
+    margin: 10px 0;
+}
 
-    .search{
-      flex:1;
-      min-width:220px;
-    }
+.botao {
+    background: gold;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-    .search input{
-      width:100%;
-      padding:12px 14px;
-      border-radius:999px;
-      border:1px solid #ecc9da;
-      outline:none;
-      background:#fff;
-    }
+.botao:hover {
+    background: #d4af37;
+}
 
-    .top-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid gold;
+    margin-top: 20px;
+}
+</style>
 
-    .top-btn{
-      background:#fff0f7;
-      color:#d63384;
-      padding:10px 14px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:bold;
-      border:1px solid #f3d6e5;
-    }
-
-    .hero{
-      background:
-        linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.42)),
-        url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      min-height:72vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:40px 18px;
-    }
-
-    .hero-box{
-      max-width:900px;
-      background:rgba(255,255,255,0.13);
-      border:1px solid rgba(255,255,255,0.22);
-      backdrop-filter: blur(6px);
-      border-radius:30px;
-      padding:34px 22px;
-      box-shadow:0 16px 40px rgba(0,0,0,0.18);
-    }
-
-    .hero-mini{
-      color:#ffe082;
-      font-size:13px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      font-weight:bold;
-      margin-bottom:14px;
-    }
-
-    .hero h1{
-      font-size:44px;
-      color:#fff;
-      margin-bottom:14px;
-      line-height:1.1;
-    }
-
-    .hero p{
-      max-width:700px;
-      margin:0 auto 24px;
-      color:#fff6fb;
-      font-size:17px;
-      line-height:1.7;
-    }
-
-    .hero-actions{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    .btn-main{
-      background:#ff4fa3;
-      color:#fff;
-      padding:14px 22px;
-      border-radius:999px;
-      font-weight:bold;
-      box-shadow:0 10px 24px rgba(255,79,163,0.28);
-    }
-
-    .btn-alt{
-      background:#fff;
-      color:#d63384;
-      padding:14px 22px;
-      border-radius:999px;
-      font-weight:bold;
-    }
-
-    .container{
-      max-width:1200px;
-      margin:0 auto;
-      padding:38px 16px 70px;
-    }
-
-    .cats{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-      gap:14px;
-      margin-top:-34px;
-      position:relative;
-      z-index:3;
-    }
-
-    .cat{
-      background:#fff;
-      border-radius:22px;
-      padding:18px 14px;
-      text-align:center;
-      box-shadow:0 10px 24px rgba(0,0,0,0.08);
-      border:1px solid #f3dde8;
-    }
-
-    .cat .emoji{
-      font-size:30px;
-      margin-bottom:8px;
-    }
-
-    .cat h3{
-      font-size:15px;
-      color:#d63384;
-    }
-
-    .section-head{
-      text-align:center;
-      margin:44px 0 24px;
-    }
-
-    .section-head h2{
-      color:#d63384;
-      font-size:32px;
-      margin-bottom:10px;
-    }
-
-    .section-head p{
-      color:#7a6671;
-      font-size:15px;
-    }
-
-    .offer-banner{
-      background:linear-gradient(135deg, #ff4fa3, #ff85c2);
-      color:#fff;
-      border-radius:28px;
-      padding:28px 22px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
-      box-shadow:0 16px 34px rgba(255,79,163,0.18);
-    }
-
-    .offer-banner h3{
-      font-size:30px;
-      margin-bottom:8px;
-    }
-
-    .offer-banner p{
-      max-width:700px;
-      line-height:1.7;
-    }
-
-    .offer-btn{
-      background:#fff;
-      color:#d63384;
-      padding:14px 20px;
-      border-radius:999px;
-      font-weight:bold;
-      white-space:nowrap;
-    }
-
-    .products{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:22px;
-      margin-top:24px;
-    }
-
-    .card{
-      background:#fff;
-      border-radius:24px;
-      overflow:hidden;
-      box-shadow:0 10px 28px rgba(0,0,0,0.08);
-      border:1px solid #f2dbe6;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .card img{
-      width:100%;
-      height:260px;
-      object-fit:cover;
-      display:block;
-    }
-
-    .card-body{
-      padding:18px;
-      display:flex;
-      flex-direction:column;
-      height:100%;
-    }
-
-    .badge{
-      display:inline-block;
-      background:#fff0f7;
-      color:#d63384;
-      padding:7px 11px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:bold;
-      margin-bottom:10px;
-    }
-
-    .card h3{
-      font-size:24px;
-      margin-bottom:10px;
-      color:#222;
-    }
-
-    .desc{
-      color:#666;
-      font-size:14px;
-      line-height:1.6;
-      margin-bottom:12px;
-    }
-
-    .bullets{
-      color:#555;
-      font-size:13px;
-      line-height:1.6;
-      margin:0 0 14px 18px;
-    }
-
-    .old-price{
-      color:#999;
-      text-decoration:line-through;
-      font-size:14px;
-      margin-bottom:4px;
-    }
-
-    .price{
-      color:#d63384;
-      font-size:28px;
-      font-weight:bold;
-      margin-bottom:14px;
-    }
-
-    .cta-row{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:auto;
-    }
-
-    .buy{
-      flex:1;
-      background:#25d366;
-      color:#fff;
-      text-align:center;
-      padding:12px 14px;
-      border-radius:12px;
-      font-weight:bold;
-      min-width:140px;
-    }
-
-    .details-btn{
-      flex:1;
-      background:#fff0f7;
-      color:#d63384;
-      text-align:center;
-      padding:12px 14px;
-      border-radius:12px;
-      font-weight:bold;
-      min-width:140px;
-    }
-
-    .trust{
-      margin-top:36px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:14px;
-    }
-
-    .trust-item{
-      background:#fff;
-      border-radius:20px;
-      padding:18px;
-      text-align:center;
-      border:1px solid #f2dbe6;
-      box-shadow:0 8px 20px rgba(0,0,0,0.05);
-      color:#d63384;
-      font-weight:bold;
-    }
-
-    .footer-box{
-      margin-top:40px;
-      background:#fff;
-      border-radius:28px;
-      padding:28px 20px;
-      text-align:center;
-      border:1px solid #f2dbe6;
-      box-shadow:0 10px 28px rgba(0,0,0,0.06);
-    }
-
-    .footer-box h2{
-      color:#d63384;
-      margin-bottom:12px;
-      font-size:28px;
-    }
-
-    .footer-box p{
-      max-width:760px;
-      margin:0 auto;
-      color:#666;
-      line-height:1.7;
-    }
-
-    .whatsapp-float{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      width:62px;
-      height:62px;
-      border-radius:50%;
-      background:#25d366;
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:30px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.25);
-      z-index:999;
-    }
-
-    footer{
-      text-align:center;
-      color:#8b7b85;
-      padding:26px 16px 40px;
-      font-size:13px;
-    }
-
-    @media (max-width:700px){
-      .hero h1{
-        font-size:33px;
-      }
-
-      .offer-banner h3{
-        font-size:24px;
-      }
-
-      .section-head h2{
-        font-size:28px;
-      }
-
-      .card img{
-        height:230px;
-      }
-    }
-  </style>
 </head>
+
 <body>
 
-  <div class="promo-bar">
-    ✨ OFERTAS DESBLOQUEADAS ✨ • FRETE EM CONDIÇÕES ESPECIAIS • BELEZA PREMIUM • ÚLTIMAS UNIDADES
-  </div>
+<header>
+    <h1>IMPERIUM BEAUTY</h1>
+</header>
 
-  <header class="top-header">
-    <div class="top-header-inner">
-      <div class="logo">Maison <span>Beauty</span></div>
-      <div class="search">
-        <input type="text" placeholder="Buscar produtos, marcas e tratamentos">
-      </div>
-      <div class="top-actions">
-        <a class="top-btn" href="#produtos">Ofertas</a>
-        <a class="top-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20atendimento%20premium">Atendimento</a>
-      </div>
-    </div>
-  </header>
+<div class="banner">
+    🔥 OFERTAS EXCLUSIVAS • RESULTADO PROFISSIONAL EM CASA 🔥
+</div>
 
-  <section class="hero">
-    <div class="hero-box">
-      <div class="hero-mini">Beleza premium com presença</div>
-      <h1>Ofertas desbloqueadas para sua rotina de beleza</h1>
-      <p>
-        Produtos de beleza premium, preços especiais e uma seleção luxuosa para mulheres
-        que gostam de sofisticação, cuidado e um visual marcante.
-      </p>
-      <div class="hero-actions">
-        <a class="btn-main" href="#produtos">Comprar agora</a>
-        <a class="btn-alt" href="https://wa.me/5561995041672?text=Olá%20quero%20conhecer%20a%20coleção%20premium">Falar no WhatsApp</a>
-      </div>
-    </div>
-  </section>
+<section class="produtos">
 
-  <div class="container">
-    <section class="cats">
-      <div class="cat">
-        <div class="emoji">💆‍♀️</div>
-        <h3>Skincare</h3>
-      </div>
-      <div class="cat">
-        <div class="emoji">💄</div>
-        <h3>Maquiagem</h3>
-      </div>
-      <div class="cat">
-        <div class="emoji">🪮</div>
-        <h3>Cabelos</h3>
-      </div>
-      <div class="cat">
-        <div class="emoji">✨</div>
-        <h3>Tratamentos</h3>
-      </div>
-      <div class="cat">
-        <div class="emoji">🎁</div>
-        <h3>Kits</h3>
-      </div>
-      <div class="cat">
-        <div class="emoji">🔥</div>
-        <h3>Mais vendidos</h3>
-      </div>
-    </section>
+<div class="produto">
+    <img src="https://via.placeholder.com/300" alt="Escova Secadora">
+    <h3>Escova Secadora Profissional</h3>
+    <p>Seca, alisa e modela em minutos.</p>
+    <div class="preco">R$ 199,90</div>
+    <button class="botao">Comprar agora</button>
+</div>
 
-    <div class="section-head">
-      <h2>Ofertas em destaque</h2>
-      <p>Uma seleção profissional com descrição completa, preço em evidência e compra direta pelo WhatsApp.</p>
-    </div>
+<div class="produto">
+    <img src="https://via.placeholder.com/300" alt="Sérum Capilar">
+    <h3>Sérum Capilar Premium</h3>
+    <p>Brilho intenso e hidratação profunda.</p>
+    <div class="preco">R$ 89,90</div>
+    <button class="botao">Comprar agora</button>
+</div>
 
-    <div class="offer-banner">
-      <div>
-        <h3>Semana da Beleza Premium</h3>
-        <p>
-          Aproveite preços especiais em skincare, maquiagem e cuidados capilares.
-          Escolha seus favoritos e finalize seu pedido com atendimento rápido.
-        </p>
-      </div>
-      <a class="offer-btn" href="#produtos">Ver ofertas</a>
-    </div>
+<div class="produto">
+    <img src="https://via.placeholder.com/300" alt="Kit Completo">
+    <h3>Kit Completo Imperium</h3>
+    <p>Resultado de salão sem sair de casa.</p>
+    <div class="preco">R$ 249,90</div>
+    <button class="botao">Comprar agora</button>
+</div>
 
-    <div class="section-head" id="produtos">
-      <h2>Mais vendidos</h2>
-      <p>Produtos com visual premium, benefícios destacados e forte apelo de venda.</p>
-    </div>
+</section>
 
-    <section class="products">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?auto=format&fit=crop&w=900&q=80" alt="Sérum Vitamina C">
-        <div class="card-body">
-          <div class="badge">Mais vendido</div>
-          <h3>Sérum Vitamina C</h3>
-          <p class="desc">
-            Ideal para uma rotina facial mais sofisticada, com aparência de pele iluminada e bem cuidada.
-          </p>
-          <ul class="bullets">
-            <li>Ajuda a deixar a pele mais radiante</li>
-            <li>Ótimo para rotina diária</li>
-            <li>Textura leve e agradável</li>
-            <li>Visual premium</li>
-          </ul>
-          <div class="old-price">R$ 119,90</div>
-          <div class="price">R$ 79,90</div>
-          <div class="cta-row">
-            <a class="buy" href="https://wa.me/5561995041672?text=Olá%20quero%20comprar%20o%20Sérum%20Vitamina%20C">Comprar</a>
-            <a class="details-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20mais%20detalhes%20do%20Sérum%20Vitamina%20C">Mais detalhes</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80" alt="Escova Secadora">
-        <div class="card-body">
-          <div class="badge">Hair premium</div>
-          <h3>Escova Secadora</h3>
-          <p class="desc">
-            Mais praticidade na rotina e acabamento elegante para quem gosta de cabelo alinhado e bonito.
-          </p>
-          <ul class="bullets">
-            <li>Ajuda a modelar e alinhar</li>
-            <li>Visual com efeito sofisticado</li>
-            <li>Praticidade no uso diário</li>
-            <li>Produto com forte apelo de venda</li>
-          </ul>
-          <div class="old-price">R$ 229,90</div>
-          <div class="price">R$ 149,90</div>
-          <div class="cta-row">
-            <a class="buy" href="https://wa.me/5561995041672?text=Olá%20quero%20comprar%20a%20Escova%20Secadora">Comprar</a>
-            <a class="details-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20mais%20detalhes%20da%20Escova%20Secadora">Mais detalhes</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=900&q=80" alt="Gloss Premium">
-        <div class="card-body">
-          <div class="badge">Tendência</div>
-          <h3>Gloss Premium</h3>
-          <p class="desc">
-            Brilho sofisticado e acabamento glamouroso para destacar os lábios com charme e elegância.
-          </p>
-          <ul class="bullets">
-            <li>Brilho marcante</li>
-            <li>Visual moderno</li>
-            <li>Ótimo para dia e noite</li>
-            <li>Toque mais luxuoso</li>
-          </ul>
-          <div class="old-price">R$ 59,90</div>
-          <div class="price">R$ 39,90</div>
-          <div class="cta-row">
-            <a class="buy" href="https://wa.me/5561995041672?text=Olá%20quero%20comprar%20o%20Gloss%20Premium">Comprar</a>
-            <a class="details-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20mais%20detalhes%20do%20Gloss%20Premium">Mais detalhes</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=80" alt="Kit Skincare">
-        <div class="card-body">
-          <div class="badge">Kit exclusivo</div>
-          <h3>Kit Skincare</h3>
-          <p class="desc">
-            Uma rotina completa com apelo de autocuidado, organização e estética de produto premium.
-          </p>
-          <ul class="bullets">
-            <li>Mais praticidade na rotina</li>
-            <li>Visual bonito no site</li>
-            <li>Produto ideal para presente</li>
-            <li>Alto valor percebido</li>
-          </ul>
-          <div class="old-price">R$ 179,90</div>
-          <div class="price">R$ 119,90</div>
-          <div class="cta-row">
-            <a class="buy" href="https://wa.me/5561995041672?text=Olá%20quero%20comprar%20o%20Kit%20Skincare">Comprar</a>
-            <a class="details-btn" href="https://wa.me/5561995041672?text=Olá%20quero%20mais%20detalhes%20do%20Kit%20Skincare">Mais detalhes</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="trust">
-      <div class="trust-item">Compra rápida no WhatsApp</div>
-      <div class="trust-item">Visual de loja profissional</div>
-      <div class="trust-item">Produtos em alta</div>
-      <div class="trust-item">Atendimento premium</div>
-    </section>
-
-    <section class="footer-box">
-      <h2>Uma vitrine profissional de beleza</h2>
-      <p>
-        Seu site agora fica com cara de e-commerce profissional: faixa promocional forte,
-        banner principal, categorias, produtos com foto, descrição completa, preço em destaque
-        e botão de compra direto para atendimento.
-      </p>
-    </section>
-  </div>
-
-  <a class="whatsapp-float" href="https://wa.me/5561995041672?text=Olá%20quero%20atendimento%20premium" aria-label="WhatsApp">✆</a>
-
-  <footer>
-    © 2026 Maison Beauty Luxe • Beleza premium com presença
-  </footer>
+<footer>
+    © 2026 Imperium Beauty - Todos os direitos reservados
+</footer>
 
 </body>
 </html>
