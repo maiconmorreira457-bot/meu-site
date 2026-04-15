@@ -1,885 +1,139 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luxury Beauty</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-    }
-
-    body{
-      background: linear-gradient(180deg,#fff8fb 0%, #fff 35%, #fff7f3 100%);
-      color:#222;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(255,255,255,0.92);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(0,0,0,0.06);
-    }
-
-    .topbar{
-      background: linear-gradient(90deg,#ff4fa3,#ff8a5b,#ffd54f);
-      color:#fff;
-      text-align:center;
-      padding:10px 16px;
-      font-size:14px;
-      font-weight:600;
-      letter-spacing:.4px;
-    }
-
-    .navbar{
-      max-width:1400px;
-      margin:auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      padding:18px 22px;
-    }
-
-    .logo{
-      font-size:34px;
-      font-weight:800;
-      background: linear-gradient(90deg,#ff4fa3,#ff8a5b,#ffd54f);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      letter-spacing:.5px;
-      white-space:nowrap;
-    }
-
-    .search-box{
-      flex:1;
-      display:flex;
-      align-items:center;
-      background:#fff;
-      border:1px solid #eee;
-      border-radius:999px;
-      padding:0 16px;
-      height:48px;
-      box-shadow:0 8px 22px rgba(0,0,0,0.04);
-      max-width:650px;
-    }
-
-    .search-box input{
-      border:none;
-      outline:none;
-      width:100%;
-      font-size:15px;
-      background:transparent;
-    }
-
-    .nav-icons{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-
-    .nav-btn{
-      background:#fff;
-      border:1px solid #eee;
-      border-radius:999px;
-      padding:10px 16px;
-      font-size:14px;
-      font-weight:600;
-      cursor:pointer;
-      box-shadow:0 8px 20px rgba(0,0,0,0.04);
-    }
-
-    .hero{
-      max-width:1400px;
-      margin:22px auto 0;
-      padding:0 20px;
-    }
-
-    .banner{
-      position:relative;
-      height:520px;
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:0 20px 60px rgba(0,0,0,0.14);
-    }
-
-    .slide{
-      position:absolute;
-      inset:0;
-      opacity:0;
-      transform:scale(1.04);
-      transition:opacity 1s ease, transform 1s ease;
-    }
-
-    .slide.active{
-      opacity:1;
-      transform:scale(1);
-      z-index:1;
-    }
-
-    .slide img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(90deg,rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.20) 45%, rgba(0,0,0,0.10) 100%);
-      z-index:2;
-    }
-
-    .banner-content{
-      position:absolute;
-      z-index:3;
-      left:50px;
-      top:50%;
-      transform:translateY(-50%);
-      max-width:560px;
-      color:#fff;
-    }
-
-    .tag{
-      display:inline-block;
-      padding:10px 18px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.16);
-      backdrop-filter:blur(10px);
-      font-size:13px;
-      font-weight:600;
-      margin-bottom:16px;
-      border:1px solid rgba(255,255,255,0.18);
-    }
-
-    .banner-content h1{
-      font-size:54px;
-      line-height:1.05;
-      margin-bottom:16px;
-      font-weight:800;
-    }
-
-    .banner-content p{
-      font-size:16px;
-      line-height:1.7;
-      margin-bottom:24px;
-      color:rgba(255,255,255,0.92);
-    }
-
-    .banner-actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-
-    .btn-primary,.btn-secondary{
-      padding:14px 24px;
-      border-radius:999px;
-      font-weight:700;
-      border:none;
-      cursor:pointer;
-      font-size:15px;
-    }
-
-    .btn-primary{
-      background: linear-gradient(90deg,#ff4fa3,#ff8a5b,#ffd54f);
-      color:#fff;
-      box-shadow:0 10px 30px rgba(255,105,135,0.28);
-    }
-
-    .btn-secondary{
-      background:rgba(255,255,255,0.14);
-      color:#fff;
-      border:1px solid rgba(255,255,255,0.22);
-      backdrop-filter:blur(10px);
-    }
-
-    .banner-dots{
-      position:absolute;
-      z-index:4;
-      bottom:24px;
-      left:50%;
-      transform:translateX(-50%);
-      display:flex;
-      gap:10px;
-    }
-
-    .dot{
-      width:12px;
-      height:12px;
-      border-radius:50%;
-      background:rgba(255,255,255,0.45);
-      cursor:pointer;
-      transition:.3s;
-    }
-
-    .dot.active{
-      background:#fff;
-      transform:scale(1.15);
-    }
-
-    .section{
-      max-width:1400px;
-      margin:34px auto 0;
-      padding:0 20px;
-    }
-
-    .section-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:18px;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .section-head h2{
-      font-size:32px;
-      font-weight:800;
-      color:#1f1f1f;
-    }
-
-    .section-head p{
-      color:#777;
-      font-size:14px;
-    }
-
-    .carousel-wrapper{
-      position:relative;
-    }
-
-    .carousel{
-      display:flex;
-      gap:18px;
-      overflow-x:auto;
-      scroll-behavior:smooth;
-      padding-bottom:10px;
-    }
-
-    .carousel::-webkit-scrollbar{
-      height:8px;
-    }
-
-    .carousel::-webkit-scrollbar-thumb{
-      background:#f2c4d6;
-      border-radius:999px;
-    }
-
-    .product-card{
-      min-width:260px;
-      max-width:260px;
-      background:#fff;
-      border-radius:24px;
-      overflow:hidden;
-      box-shadow:0 18px 40px rgba(0,0,0,0.08);
-      transition:.28s;
-      border:1px solid rgba(0,0,0,0.05);
-    }
-
-    .product-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 24px 50px rgba(0,0,0,0.12);
-    }
-
-    .product-image{
-      width:100%;
-      height:260px;
-      background:#fafafa;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-    }
-
-    .product-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .product-info{
-      padding:18px;
-    }
-
-    .category{
-      font-size:12px;
-      font-weight:700;
-      color:#ff5b97;
-      text-transform:uppercase;
-      letter-spacing:.8px;
-      margin-bottom:8px;
-    }
-
-    .product-title{
-      font-size:16px;
-      font-weight:700;
-      line-height:1.4;
-      margin-bottom:10px;
-      min-height:46px;
-      color:#222;
-    }
-
-    .product-desc{
-      font-size:13px;
-      color:#666;
-      line-height:1.5;
-      min-height:42px;
-      margin-bottom:14px;
-    }
-
-    .price-row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom:14px;
-    }
-
-    .price{
-      font-size:22px;
-      font-weight:800;
-      color:#111;
-    }
-
-    .old-price{
-      font-size:13px;
-      color:#999;
-      text-decoration:line-through;
-    }
-
-    .buy-btn{
-      width:100%;
-      border:none;
-      padding:13px 16px;
-      border-radius:14px;
-      font-weight:700;
-      font-size:14px;
-      background: linear-gradient(90deg,#ff4fa3,#ff8a5b);
-      color:#fff;
-      cursor:pointer;
-      transition:.25s;
-    }
-
-    .buy-btn:hover{
-      filter:brightness(1.04);
-    }
-
-    .grid-products{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:22px;
-    }
-
-    .categories{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:18px;
-    }
-
-    .cat-box{
-      background:#fff;
-      border-radius:22px;
-      padding:24px;
-      box-shadow:0 14px 34px rgba(0,0,0,0.06);
-      border:1px solid rgba(0,0,0,0.05);
-      transition:.25s;
-    }
-
-    .cat-box:hover{
-      transform:translateY(-5px);
-    }
-
-    .cat-box h3{
-      font-size:20px;
-      margin-bottom:10px;
-      color:#222;
-    }
-
-    .cat-box p{
-      color:#666;
-      line-height:1.6;
-      font-size:14px;
-    }
-
-    .newsletter{
-      margin:50px auto;
-      max-width:1400px;
-      padding:0 20px;
-    }
-
-    .newsletter-box{
-      background: linear-gradient(90deg,#141414,#2e2e2e);
-      color:#fff;
-      border-radius:30px;
-      padding:38px 28px;
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      box-shadow:0 20px 50px rgba(0,0,0,0.18);
-    }
-
-    .newsletter-box h3{
-      font-size:30px;
-      font-weight:800;
-      margin-bottom:8px;
-    }
-
-    .newsletter-box p{
-      color:#ddd;
-      font-size:15px;
-      line-height:1.6;
-    }
-
-    .newsletter-form{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .newsletter-form input{
-      width:300px;
-      max-width:100%;
-      border:none;
-      outline:none;
-      border-radius:999px;
-      padding:15px 18px;
-      font-size:14px;
-    }
-
-    .newsletter-form button{
-      border:none;
-      border-radius:999px;
-      padding:15px 22px;
-      font-weight:700;
-      background: linear-gradient(90deg,#ff4fa3,#ff8a5b,#ffd54f);
-      color:#fff;
-      cursor:pointer;
-    }
-
-    footer{
-      background:#111;
-      color:#fff;
-      margin-top:30px;
-      padding:38px 20px;
-    }
-
-    .footer-wrap{
-      max-width:1400px;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .footer-logo{
-      font-size:30px;
-      font-weight:800;
-      background: linear-gradient(90deg,#ff4fa3,#ff8a5b,#ffd54f);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .footer-copy{
-      color:#bbb;
-      font-size:14px;
-      margin-top:10px;
-      line-height:1.7;
-    }
-
-    .footer-links{
-      display:flex;
-      gap:28px;
-      flex-wrap:wrap;
-    }
-
-    .footer-links div h4{
-      margin-bottom:12px;
-      font-size:16px;
-    }
-
-    .footer-links div a{
-      display:block;
-      color:#bbb;
-      margin-bottom:8px;
-      font-size:14px;
-    }
-
-    @media(max-width:900px){
-      .banner{
-        height:430px;
-      }
-
-      .banner-content{
-        left:24px;
-        right:24px;
-        max-width:100%;
-      }
-
-      .banner-content h1{
-        font-size:38px;
-      }
-
-      .navbar{
-        flex-wrap:wrap;
-      }
-
-      .search-box{
-        order:3;
-        width:100%;
-        max-width:none;
-      }
-    }
-
-    @media(max-width:600px){
-      .banner{
-        height:400px;
-      }
-
-      .banner-content h1{
-        font-size:30px;
-      }
-
-      .section-head h2{
-        font-size:24px;
-      }
-
-      .product-card{
-        min-width:220px;
-        max-width:220px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="topbar">✨ FRETE GRÁTIS ACIMA DE R$ 299 • PERFUMES IMPORTADOS • SKINCARE • BEAUTY TECH</div>
-    <div class="navbar">
-      <div class="logo">Luxury Beauty</div>
-
-      <div class="search-box">
-        <input type="text" placeholder="Buscar perfumes, skincare, chapinha, secador..." />
-      </div>
-
-      <div class="nav-icons">
-        <button class="nav-btn">Entrar</button>
-        <button class="nav-btn">Favoritos</button>
-        <button class="nav-btn">Carrinho</button>
-      </div>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="banner">
-      <div class="slide active">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80" alt="Banner beleza 1">
-      </div>
-      <div class="slide">
-        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1600&q=80" alt="Banner beleza 2">
-      </div>
-      <div class="slide">
-        <img src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?auto=format&fit=crop&w=1600&q=80" alt="Banner beleza 3">
-      </div>
-
-      <div class="overlay"></div>
-
-      <div class="banner-content">
-        <div class="tag">BELEZA PREMIUM • PERFUMARIA • SKINCARE • ELETRO BEAUTY</div>
-        <h1>Descubra sua versão mais luxuosa</h1>
-        <p>Perfumes importados, skincare das marcas mais desejadas e eletroportáteis de beleza em um visual sofisticado, moderno e marcante.</p>
-        <div class="banner-actions">
-          <button class="btn-primary" onclick="document.getElementById('destaques').scrollIntoView({behavior:'smooth'})">Comprar agora</button>
-          <button class="btn-secondary" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">Ver catálogo</button>
-        </div>
-      </div>
-
-      <div class="banner-dots">
-        <span class="dot active" onclick="showSlide(0)"></span>
-        <span class="dot" onclick="showSlide(1)"></span>
-        <span class="dot" onclick="showSlide(2)"></span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="categories">
-      <div class="cat-box">
-        <h3>Perfumes Importados</h3>
-        <p>Fragrâncias femininas e masculinas com presença, sofisticação e alta fixação.</p>
-      </div>
-      <div class="cat-box">
-        <h3>Skincare Premium</h3>
-        <p>Cuidados faciais com Principia, La Roche-Posay e Lancôme para uma pele impecável.</p>
-      </div>
-      <div class="cat-box">
-        <h3>Beauty Tech</h3>
-        <p>Escovas, chapinhas, secadores e modeladores para elevar sua rotina de beleza.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="destaques">
-    <div class="section-head">
-      <div>
-        <h2>Mais vendidos</h2>
-        <p>Seleção com visual de loja grande, elegante e moderna</p>
-      </div>
-    </div>
-
-    <div class="carousel-wrapper">
-      <div class="carousel" id="carousel-products"></div>
-    </div>
-  </section>
-
-  <section class="section" id="catalogo">
-    <div class="section-head">
-      <div>
-        <h2>Nosso catálogo</h2>
-        <p>15 produtos organizados em perfume, skincare e eletro beleza</p>
-      </div>
-    </div>
-    <div class="grid-products" id="grid-products"></div>
-  </section>
-
-  <section class="newsletter">
-    <div class="newsletter-box">
-      <div>
-        <h3>Receba ofertas exclusivas</h3>
-        <p>Cadastre-se para acompanhar lançamentos, promoções e produtos em alta.</p>
-      </div>
-      <div class="newsletter-form">
-        <input type="email" placeholder="Digite seu e-mail" />
-        <button>Quero receber</button>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-wrap">
-      <div>
-        <div class="footer-logo">Luxury Beauty</div>
-        <div class="footer-copy">
-          Sua loja online de beleza premium com perfumes importados, skincare e eletroportáteis de alta performance.
-        </div>
-      </div>
-
-      <div class="footer-links">
-        <div>
-          <h4>Loja</h4>
-          <a href="#">Perfumes</a>
-          <a href="#">Skincare</a>
-          <a href="#">Eletro Beauty</a>
-        </div>
-        <div>
-          <h4>Ajuda</h4>
-          <a href="#">Entrega</a>
-          <a href="#">Trocas</a>
-          <a href="#">Atendimento</a>
-        </div>
-        <div>
-          <h4>Luxury Beauty</h4>
-          <a href="#">Sobre nós</a>
-          <a href="#">Privacidade</a>
-          <a href="#">Termos</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const products = [
-      {
-        category: "Perfume Feminino",
-        title: "Lancôme La Vie Est Belle EDP",
-        desc: "Fragrância feminina sofisticada e marcante.",
-        price: "R$ 429,90",
-        oldPrice: "R$ 489,90",
-        image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Perfume Feminino",
-        title: "Carolina Herrera Good Girl",
-        desc: "Ícone feminino com presença intensa e luxuosa.",
-        price: "R$ 459,90",
-        oldPrice: "R$ 529,90",
-        image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Perfume Feminino",
-        title: "YSL Libre Eau de Parfum",
-        desc: "Moderno, elegante e extremamente desejado.",
-        price: "R$ 469,90",
-        oldPrice: "R$ 549,90",
-        image: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Perfume Masculino",
-        title: "Dior Sauvage",
-        desc: "Perfume masculino intenso e muito procurado.",
-        price: "R$ 499,90",
-        oldPrice: "R$ 569,90",
-        image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Perfume Masculino",
-        title: "Paco Rabanne 1 Million",
-        desc: "Fragrância quente, poderosa e sedutora.",
-        price: "R$ 439,90",
-        oldPrice: "R$ 499,90",
-        image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Perfume Masculino",
-        title: "Bleu de Chanel",
-        desc: "Refinado, clássico e imponente.",
-        price: "R$ 539,90",
-        oldPrice: "R$ 599,90",
-        image: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Skincare",
-        title: "Principia Niacinamida + Zinco",
-        desc: "Sérum facial para uniformização e oleosidade.",
-        price: "R$ 59,90",
-        oldPrice: "R$ 69,90",
-        image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Skincare",
-        title: "Principia Ácido Hialurônico",
-        desc: "Hidratação intensa e textura leve para o rosto.",
-        price: "R$ 64,90",
-        oldPrice: "R$ 74,90",
-        image: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Skincare",
-        title: "La Roche-Posay Effaclar",
-        desc: "Limpeza profunda para pele oleosa.",
-        price: "R$ 89,90",
-        oldPrice: "R$ 99,90",
-        image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Skincare",
-        title: "La Roche Anthelios Airlicium",
-        desc: "Protetor solar facial com toque seco.",
-        price: "R$ 82,90",
-        oldPrice: "R$ 97,90",
-        image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Skincare",
-        title: "Lancôme Génifique Sérum",
-        desc: "Sérum premium de luminosidade e firmeza.",
-        price: "R$ 399,90",
-        oldPrice: "R$ 459,90",
-        image: "https://images.unsplash.com/photo-1570194065650-d99fb4bedf0f?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Beauty Tech",
-        title: "Escova Secadora Philco",
-        desc: "Modela e seca com praticidade no dia a dia.",
-        price: "R$ 189,90",
-        oldPrice: "R$ 229,90",
-        image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Beauty Tech",
-        title: "Chapinha Gama Italy",
-        desc: "Alisamento rápido com acabamento brilhoso.",
-        price: "R$ 159,90",
-        oldPrice: "R$ 189,90",
-        image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Beauty Tech",
-        title: "Secador Profissional Gama",
-        desc: "Alta potência para secagem e escova.",
-        price: "R$ 249,90",
-        oldPrice: "R$ 299,90",
-        image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80"
-      },
-      {
-        category: "Beauty Tech",
-        title: "Modelador de Cachos Philco",
-        desc: "Ondas modernas com acabamento elegante.",
-        price: "R$ 179,90",
-        oldPrice: "R$ 219,90",
-        image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
-      }
-    ];
-
-    const carousel = document.getElementById("carousel-products");
-    const grid = document.getElementById("grid-products");
-
-    function createProductCard(product){
-      return `
-        <div class="product-card">
-          <div class="product-image">
-            <img src="${product.image}" alt="${product.title}" loading="lazy">
-          </div>
-          <div class="product-info">
-            <div class="category">${product.category}</div>
-            <div class="product-title">${product.title}</div>
-            <div class="product-desc">${product.desc}</div>
-            <div class="price-row">
-              <div>
-                <div class="price">${product.price}</div>
-                <div class="old-price">${product.oldPrice}</div>
-              </div>
-            </div>
-            <button class="buy-btn">Comprar agora</button>
-          </div>
-        </div>
-      `;
-    }
-
-    products.forEach(product => {
-      carousel.innerHTML += createProductCard(product);
-      grid.innerHTML += createProductCard(product);
-    });
-
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
-
-    function showSlide(index){
-      slides.forEach((slide,i)=>{
-        slide.classList.toggle("active", i === index);
-      });
-
-      dots.forEach((dot,i)=>{
-        dot.classList.toggle("active", i === index);
-      });
-
-      currentSlide = index;
-    }
-
-    function nextSlide(){
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    setInterval(nextSlide, 4000);
-  </script>
-</body>
-</html>
+const products = [
+
+  // ===== PERFUMES FEMININOS =====
+  {
+    category: "Perfume Feminino",
+    title: "Carolina Herrera 212 VIP Rosé EDP 80ml",
+    desc: "Perfume feminino sofisticado, moderno e muito desejado.",
+    price: "R$ 459,90",
+    oldPrice: "R$ 529,90",
+    image: "https://m.media-amazon.com/images/I/61j3R3+YJBL._AC_SL1500_.jpg"
+  },
+  {
+    category: "Perfume Feminino",
+    title: "Lancôme La Vie Est Belle EDP 100ml",
+    desc: "Fragrância doce e elegante com alta fixação.",
+    price: "R$ 429,90",
+    oldPrice: "R$ 499,90",
+    image: "https://m.media-amazon.com/images/I/71U6vU5V2XL._AC_SL1500_.jpg"
+  },
+  {
+    category: "Perfume Feminino",
+    title: "YSL Libre Eau de Parfum 90ml",
+    desc: "Perfume marcante e luxuoso, sucesso mundial.",
+    price: "R$ 479,90",
+    oldPrice: "R$ 559,90",
+    image: "https://m.media-amazon.com/images/I/61E9b9W7jSL._AC_SL1500_.jpg"
+  },
+
+  // ===== PERFUMES MASCULINOS =====
+  {
+    category: "Perfume Masculino",
+    title: "Carolina Herrera 212 VIP Men 100ml",
+    desc: "Fragrância masculina intensa e sedutora.",
+    price: "R$ 449,90",
+    oldPrice: "R$ 519,90",
+    image: "https://m.media-amazon.com/images/I/61d2Vd7gYpL._AC_SL1500_.jpg"
+  },
+  {
+    category: "Perfume Masculino",
+    title: "Dior Sauvage EDT 100ml",
+    desc: "Um dos perfumes masculinos mais vendidos do mundo.",
+    price: "R$ 499,90",
+    oldPrice: "R$ 569,90",
+    image: "https://m.media-amazon.com/images/I/61kJ2Z8wJBL._AC_SL1500_.jpg"
+  },
+  {
+    category: "Perfume Masculino",
+    title: "Paco Rabanne 1 Million EDT 100ml",
+    desc: "Perfume quente e marcante para presença forte.",
+    price: "R$ 439,90",
+    oldPrice: "R$ 499,90",
+    image: "https://m.media-amazon.com/images/I/71w7sXW5yGL._AC_SL1500_.jpg"
+  },
+
+  // ===== KITS =====
+  {
+    category: "Kit Skincare",
+    title: "Kit La Roche-Posay Effaclar (Gel + Tratamento)",
+    desc: "Rotina completa para pele oleosa e acne.",
+    price: "R$ 189,90",
+    oldPrice: "R$ 229,90",
+    image: "https://m.media-amazon.com/images/I/61h3iM6c8HL._AC_SL1500_.jpg"
+  },
+  {
+    category: "Kit Skincare",
+    title: "Kit Principia Niacinamida + Ácido Hialurônico",
+    desc: "Controle de oleosidade + hidratação profunda.",
+    price: "R$ 119,90",
+    oldPrice: "R$ 149,90",
+    image: "https://m.media-amazon.com/images/I/61z6y3Zc5AL._AC_SL1500_.jpg"
+  },
+  {
+    category: "Kit Skincare",
+    title: "Kit Lancôme Génifique (Sérum + Mini)",
+    desc: "Tratamento premium de rejuvenescimento.",
+    price: "R$ 399,90",
+    oldPrice: "R$ 459,90",
+    image: "https://m.media-amazon.com/images/I/61F5ZkT7uZL._AC_SL1500_.jpg"
+  },
+  {
+    category: "Kit Skincare",
+    title: "Kit Creamy Rotina Completa Facial",
+    desc: "Limpeza, tratamento e hidratação em um kit.",
+    price: "R$ 139,90",
+    oldPrice: "R$ 179,90",
+    image: "https://m.media-amazon.com/images/I/61v4Xk5XgAL._AC_SL1500_.jpg"
+  },
+
+  // ===== PRODUTOS INDIVIDUAIS =====
+  {
+    category: "Skincare",
+    title: "La Roche-Posay Effaclar Gel 300g",
+    desc: "Limpeza profunda para pele oleosa.",
+    price: "R$ 89,90",
+    oldPrice: "R$ 99,90",
+    image: "https://m.media-amazon.com/images/I/61+4sS0Pz9L._AC_SL1500_.jpg"
+  },
+  {
+    category: "Skincare",
+    title: "La Roche Anthelios Airlicium FPS70",
+    desc: "Protetor solar com toque seco.",
+    price: "R$ 82,90",
+    oldPrice: "R$ 97,90",
+    image: "https://m.media-amazon.com/images/I/61z5Fz6X4kL._AC_SL1500_.jpg"
+  },
+  {
+    category: "Skincare",
+    title: "Principia Niacinamida 10% + Zinco",
+    desc: "Reduz oleosidade e melhora a pele.",
+    price: "R$ 59,90",
+    oldPrice: "R$ 69,90",
+    image: "https://m.media-amazon.com/images/I/61w4cJ7p7SL._AC_SL1500_.jpg"
+  },
+  {
+    category: "Skincare",
+    title: "Principia Ácido Hialurônico 2%",
+    desc: "Hidratação intensa e textura leve.",
+    price: "R$ 64,90",
+    oldPrice: "R$ 74,90",
+    image: "https://m.media-amazon.com/images/I/61p6ZcT6G6L._AC_SL1500_.jpg"
+  },
+  {
+    category: "Skincare",
+    title: "Lancôme Advanced Génifique Sérum",
+    desc: "Sérum facial premium anti-idade.",
+    price: "R$ 399,90",
+    oldPrice: "R$ 459,90",
+    image: "https://m.media-amazon.com/images/I/71K6Zf8h8LL._AC_SL1500_.jpg"
+  },
+  {
+    category: "Skincare",
+    title: "Creamy Ácido Glicólico",
+    desc: "Renovação celular e pele iluminada.",
+    price: "R$ 69,90",
+    oldPrice: "R$ 89,90",
+    image: "https://m.media-amazon.com/images/I/61vWcF6i0QL._AC_SL1500_.jpg"
+  }
+
+];
