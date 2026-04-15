@@ -3,143 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Velvet Luxe</title>
+<title>Imperium Beauty</title>
 
 <style>
-body {
-    margin:0;
-    font-family: Arial;
-    background:#fff;
-}
+body {margin:0;font-family:Arial;background:#fff;color:#333;}
 
 .topo {
-    background: linear-gradient(90deg,#ff4da6,#ffcc33);
-    color:#000;
-    text-align:center;
-    padding:10px;
-    font-weight:bold;
+background: linear-gradient(90deg,#000,#444);
+color:#fff;
+text-align:center;
+padding:10px;
+font-weight:bold;
 }
 
 header {
-    padding:20px;
+padding:20px;
+text-align:center;
 }
 
 header h1 {
-    font-size:32px;
-    background: linear-gradient(90deg,#ff4da6,#ffcc33);
-    -webkit-background-clip:text;
-    color:transparent;
+font-size:34px;
+color:#000;
 }
 
-.busca input {
-    width:100%;
-    padding:12px;
-    border-radius:20px;
-    border:1px solid #ccc;
-}
-
-/* HERO */
-.hero {
-    margin:20px;
-    border-radius:20px;
-    overflow:hidden;
-    position:relative;
-}
-
-.hero img {
-    width:100%;
-}
-
-.hero-text {
-    position:absolute;
-    bottom:20px;
-    left:20px;
-    color:white;
-}
-
-/* PRODUTOS */
 .produtos {
-    padding:20px;
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+padding:20px;
 }
 
 .produto {
-    border:1px solid #eee;
-    border-radius:15px;
-    padding:15px;
+border:1px solid #eee;
+border-radius:15px;
+padding:15px;
 }
 
 .carrossel {
-    display:flex;
-    overflow-x:auto;
-    gap:10px;
+display:flex;
+overflow-x:auto;
+gap:10px;
 }
 
 .carrossel img {
-    width:100%;
-    border-radius:10px;
+width:100%;
+border-radius:10px;
 }
 
 video {
-    width:100%;
-    border-radius:10px;
-    margin-top:10px;
+width:100%;
+border-radius:10px;
+margin-top:10px;
 }
 
 .preco {
-    color:#ff4da6;
-    font-size:22px;
-    font-weight:bold;
+color:#000;
+font-size:22px;
+font-weight:bold;
+margin-top:10px;
 }
 
 .botao {
-    width:100%;
-    padding:12px;
-    background:#ff4da6;
-    color:white;
-    border:none;
-    border-radius:10px;
-    margin-top:10px;
-    font-weight:bold;
-    cursor:pointer;
+display:block;
+text-align:center;
+background:#000;
+color:#fff;
+padding:12px;
+border-radius:10px;
+margin-top:10px;
+text-decoration:none;
+font-weight:bold;
 }
 
-/* WHATSAPP */
 .whats {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25d366;
-    padding:15px;
-    border-radius:50%;
-    color:white;
-    font-size:20px;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+padding:15px;
+border-radius:50%;
+color:white;
 }
+
+h3 {margin-top:10px;}
+ul {padding-left:18px;}
 </style>
 </head>
 
 <body>
 
 <div class="topo">
-🔥 FRETE GRÁTIS • RESULTADO DE SALÃO EM CASA • OFERTAS LIMITADAS 🔥
+🔥 IMPERIUM BEAUTY • FRETE GRÁTIS • RESULTADO PROFISSIONAL 🔥
 </div>
 
 <header>
-<h1>Velvet Luxe</h1>
-<div class="busca">
-<input placeholder="Buscar produtos...">
-</div>
+<h1>Imperium Beauty</h1>
 </header>
-
-<div class="hero">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-<div class="hero-text">
-<h2>Beleza premium que transforma</h2>
-<p>Os produtos mais desejados do momento</p>
-</div>
-</div>
 
 <section class="produtos">
 
@@ -151,16 +110,25 @@ video {
 </div>
 
 <video controls>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-woman-drying-her-hair-using-a-hair-dryer-4156-large.mp4">
+<source src="https://assets.mixkit.co/videos/preview/mixkit-woman-drying-her-hair-4156-large.mp4">
 </video>
 
 <h3>Escova Secadora 5 em 1 Profissional</h3>
-<p>
-Transforme seu cabelo em minutos. Alisa, seca e modela com efeito salão sem sair de casa. Ideal para quem quer praticidade e resultado impecável.
-</p>
+
+<p><b>Resultado de salão em casa em poucos minutos.</b></p>
+
+<ul>
+<li>Alisa, seca e modela ao mesmo tempo</li>
+<li>Elimina frizz e aumenta o brilho</li>
+<li>Uso rápido e prático</li>
+</ul>
+
+<p><b>Como usar:</b> utilize com cabelo úmido para melhor resultado.</p>
 
 <div class="preco">R$ 199,90</div>
-<button class="botao">Comprar agora</button>
+
+<a href="#" class="botao">💳 Comprar agora</a>
+<a href="https://wa.me/5599999999999" class="botao" style="background:#25d366;">💬 WhatsApp</a>
 </div>
 
 <!-- PRODUTO 2 -->
@@ -174,29 +142,83 @@ Transforme seu cabelo em minutos. Alisa, seca e modela com efeito salão sem sai
 <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-applying-face-serum-5074-large.mp4">
 </video>
 
-<h3>Sérum Capilar Ultra Shine</h3>
-<p>
-Brilho intenso, hidratação profunda e eliminação total do frizz desde a primeira aplicação.
-</p>
+<h3>Sérum Vitamina C Premium</h3>
 
-<div class="preco">R$ 89,90</div>
-<button class="botao">Comprar agora</button>
+<p><b>Pele iluminada e jovem todos os dias.</b></p>
+
+<ul>
+<li>Reduz linhas finas</li>
+<li>Clareia manchas</li>
+<li>Deixa a pele radiante</li>
+</ul>
+
+<div class="preco">R$ 79,90</div>
+
+<a href="#" class="botao">💳 Comprar agora</a>
 </div>
 
 <!-- PRODUTO 3 -->
+<div class="produto">
+<div class="carrossel">
+<img src="https://images.unsplash.com/photo-1556228720-195a672e8a03">
+<img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc">
+</div>
+
+<h3>Kit Skincare Completo</h3>
+
+<p><b>Rotina perfeita para uma pele impecável.</b></p>
+
+<ul>
+<li>Limpeza profunda</li>
+<li>Hidratação intensa</li>
+<li>Controle de oleosidade</li>
+</ul>
+
+<div class="preco">R$ 149,90</div>
+
+<a href="#" class="botao">💳 Comprar agora</a>
+</div>
+
+<!-- PRODUTO 4 -->
 <div class="produto">
 <div class="carrossel">
 <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273">
 <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc">
 </div>
 
-<h3>Kit Completo Velvet Luxe</h3>
-<p>
-O combo perfeito para um tratamento completo e resultado profissional todos os dias.
-</p>
+<h3>Kit Clareador Facial</h3>
 
-<div class="preco">R$ 249,90</div>
-<button class="botao">Comprar agora</button>
+<p><b>Diga adeus às manchas.</b></p>
+
+<ul>
+<li>Uniformiza o tom</li>
+<li>Reduz manchas</li>
+</ul>
+
+<div class="preco">R$ 119,90</div>
+
+<a href="#" class="botao">💳 Comprar agora</a>
+</div>
+
+<!-- PRODUTO 5 -->
+<div class="produto">
+<div class="carrossel">
+<img src="https://images.unsplash.com/photo-1585238342024-78d387f4a707">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+</div>
+
+<h3>Kit Modelador Multifuncional</h3>
+
+<p><b>Versatilidade total para seu cabelo.</b></p>
+
+<ul>
+<li>Alisa e modela</li>
+<li>Fácil de usar</li>
+</ul>
+
+<div class="preco">R$ 219,90</div>
+
+<a href="#" class="botao">💳 Comprar agora</a>
 </div>
 
 </section>
