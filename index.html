@@ -1,42 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luxury Beauty</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: white;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Beauty</title>
 
-    .topo {
-      background: #c9a227;
-      color: black;
-      text-align: center;
-      padding: 12px;
-      font-weight: bold;
-      font-size: 14px;
-    }
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background: #0d0d0d;
+  color: white;
+}
 
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(180deg, #111, #1c1c1c);
-    }
+header {
+  text-align:center;
+  padding:40px;
+  background: linear-gradient(135deg,#000,#1a1a1a);
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-      color: #f5d76e;
-    }
+header h1 {
+  color: gold;
+  font-size: 32px;
+}
 
-    header p {
-      margin-top: 10px;
-      color: #ddd;
-      font-size: 16px;
-    }
+.container {
+  padding:20px;
+}
 
-    .container
+.grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap:20px;
+}
+
+.card {
+  background:#1a1a1a;
+  border-radius:15px;
+  padding:15px;
+  text-align:center;
+}
+
+.card img {
+  width:100%;
+  border-radius:10px;
+}
+
+.price {
+  color: gold;
+  font-size:22px;
+  margin:10px 0;
+}
+
+.btn {
+  display:block;
+  background:#25d366;
+  padding:10px;
+  border-radius:8px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>💎 Luxury Beauty 💎</h1>
+<p>Produtos premium para mulheres de alto padrão</p>
+</header>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+<h3>Sérum Vitamina C</h3>
+<p>Pele perfeita e iluminada</p>
+<div class="price">R$ 79,90</div>
+<a class="btn" href="https://wa.me/5511999999999?text=Quero%20o%20Sérum">Comprar</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+<h3>Escova Secadora</h3>
+<p>Cabelo de salão em casa</p>
+<div class="price">R$ 149,90</div>
+<a class="btn" href="https://wa.me/5511999999999?text=Quero%20a%20Escova">Comprar</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa">
+<h3>Gloss Premium</h3>
+<p>Lábios volumosos e luxuosos</p>
+<div class="price">R$ 39,90</div>
+<a class="btn" href="https://wa.me/5511999999999?text=Quero%20o%20Gloss">Comprar</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+<h3>Massageador Facial</h3>
+<p>Rejuvenescimento instantâneo</p>
+<div class="price">R$ 89,90</div>
+<a class="btn" href="https://wa.me/5511999999999?text=Quero%20o%20Massageador">Comprar</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
