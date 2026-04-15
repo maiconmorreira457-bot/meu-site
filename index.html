@@ -1,139 +1,93 @@
 const products = [
 
-  // ===== PERFUMES FEMININOS =====
   {
     category: "Perfume Feminino",
     title: "Carolina Herrera 212 VIP Rosé EDP 80ml",
-    desc: "Perfume feminino sofisticado, moderno e muito desejado.",
+    desc: "Perfume feminino sofisticado e moderno.",
     price: "R$ 459,90",
     oldPrice: "R$ 529,90",
     image: "https://m.media-amazon.com/images/I/61j3R3+YJBL._AC_SL1500_.jpg"
   },
+
   {
     category: "Perfume Feminino",
     title: "Lancôme La Vie Est Belle EDP 100ml",
-    desc: "Fragrância doce e elegante com alta fixação.",
+    desc: "Fragrância doce e elegante.",
     price: "R$ 429,90",
     oldPrice: "R$ 499,90",
     image: "https://m.media-amazon.com/images/I/71U6vU5V2XL._AC_SL1500_.jpg"
   },
+
   {
     category: "Perfume Feminino",
-    title: "YSL Libre Eau de Parfum 90ml",
-    desc: "Perfume marcante e luxuoso, sucesso mundial.",
+    title: "YSL Libre EDP 90ml",
+    desc: "Perfume luxuoso e marcante.",
     price: "R$ 479,90",
     oldPrice: "R$ 559,90",
     image: "https://m.media-amazon.com/images/I/61E9b9W7jSL._AC_SL1500_.jpg"
   },
 
-  // ===== PERFUMES MASCULINOS =====
   {
     category: "Perfume Masculino",
-    title: "Carolina Herrera 212 VIP Men 100ml",
-    desc: "Fragrância masculina intensa e sedutora.",
+    title: "212 VIP Men 100ml",
+    desc: "Fragrância masculina intensa.",
     price: "R$ 449,90",
     oldPrice: "R$ 519,90",
     image: "https://m.media-amazon.com/images/I/61d2Vd7gYpL._AC_SL1500_.jpg"
   },
+
   {
     category: "Perfume Masculino",
-    title: "Dior Sauvage EDT 100ml",
-    desc: "Um dos perfumes masculinos mais vendidos do mundo.",
+    title: "Dior Sauvage 100ml",
+    desc: "Um dos mais vendidos do mundo.",
     price: "R$ 499,90",
     oldPrice: "R$ 569,90",
     image: "https://m.media-amazon.com/images/I/61kJ2Z8wJBL._AC_SL1500_.jpg"
   },
+
   {
     category: "Perfume Masculino",
-    title: "Paco Rabanne 1 Million EDT 100ml",
-    desc: "Perfume quente e marcante para presença forte.",
+    title: "1 Million Paco Rabanne 100ml",
+    desc: "Perfume marcante e poderoso.",
     price: "R$ 439,90",
     oldPrice: "R$ 499,90",
     image: "https://m.media-amazon.com/images/I/71w7sXW5yGL._AC_SL1500_.jpg"
   },
 
-  // ===== KITS =====
   {
     category: "Kit Skincare",
-    title: "Kit La Roche-Posay Effaclar (Gel + Tratamento)",
-    desc: "Rotina completa para pele oleosa e acne.",
+    title: "Kit La Roche Effaclar",
+    desc: "Rotina completa para pele oleosa.",
     price: "R$ 189,90",
     oldPrice: "R$ 229,90",
     image: "https://m.media-amazon.com/images/I/61h3iM6c8HL._AC_SL1500_.jpg"
   },
+
   {
     category: "Kit Skincare",
-    title: "Kit Principia Niacinamida + Ácido Hialurônico",
-    desc: "Controle de oleosidade + hidratação profunda.",
+    title: "Kit Principia Niacinamida + AH",
+    desc: "Controle de oleosidade e hidratação.",
     price: "R$ 119,90",
     oldPrice: "R$ 149,90",
     image: "https://m.media-amazon.com/images/I/61z6y3Zc5AL._AC_SL1500_.jpg"
   },
+
   {
     category: "Kit Skincare",
-    title: "Kit Lancôme Génifique (Sérum + Mini)",
-    desc: "Tratamento premium de rejuvenescimento.",
+    title: "Kit Lancôme Génifique",
+    desc: "Tratamento premium facial.",
     price: "R$ 399,90",
     oldPrice: "R$ 459,90",
     image: "https://m.media-amazon.com/images/I/61F5ZkT7uZL._AC_SL1500_.jpg"
   },
+
   {
     category: "Kit Skincare",
-    title: "Kit Creamy Rotina Completa Facial",
-    desc: "Limpeza, tratamento e hidratação em um kit.",
+    title: "Kit Creamy Facial",
+    desc: "Rotina completa skincare.",
     price: "R$ 139,90",
     oldPrice: "R$ 179,90",
     image: "https://m.media-amazon.com/images/I/61v4Xk5XgAL._AC_SL1500_.jpg"
-  },
-
-  // ===== PRODUTOS INDIVIDUAIS =====
-  {
-    category: "Skincare",
-    title: "La Roche-Posay Effaclar Gel 300g",
-    desc: "Limpeza profunda para pele oleosa.",
-    price: "R$ 89,90",
-    oldPrice: "R$ 99,90",
-    image: "https://m.media-amazon.com/images/I/61+4sS0Pz9L._AC_SL1500_.jpg"
-  },
-  {
-    category: "Skincare",
-    title: "La Roche Anthelios Airlicium FPS70",
-    desc: "Protetor solar com toque seco.",
-    price: "R$ 82,90",
-    oldPrice: "R$ 97,90",
-    image: "https://m.media-amazon.com/images/I/61z5Fz6X4kL._AC_SL1500_.jpg"
-  },
-  {
-    category: "Skincare",
-    title: "Principia Niacinamida 10% + Zinco",
-    desc: "Reduz oleosidade e melhora a pele.",
-    price: "R$ 59,90",
-    oldPrice: "R$ 69,90",
-    image: "https://m.media-amazon.com/images/I/61w4cJ7p7SL._AC_SL1500_.jpg"
-  },
-  {
-    category: "Skincare",
-    title: "Principia Ácido Hialurônico 2%",
-    desc: "Hidratação intensa e textura leve.",
-    price: "R$ 64,90",
-    oldPrice: "R$ 74,90",
-    image: "https://m.media-amazon.com/images/I/61p6ZcT6G6L._AC_SL1500_.jpg"
-  },
-  {
-    category: "Skincare",
-    title: "Lancôme Advanced Génifique Sérum",
-    desc: "Sérum facial premium anti-idade.",
-    price: "R$ 399,90",
-    oldPrice: "R$ 459,90",
-    image: "https://m.media-amazon.com/images/I/71K6Zf8h8LL._AC_SL1500_.jpg"
-  },
-  {
-    category: "Skincare",
-    title: "Creamy Ácido Glicólico",
-    desc: "Renovação celular e pele iluminada.",
-    price: "R$ 69,90",
-    oldPrice: "R$ 89,90",
-    image: "https://m.media-amazon.com/images/I/61vWcF6i0QL._AC_SL1500_.jpg"
   }
 
 ];
